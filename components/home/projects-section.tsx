@@ -1,8 +1,8 @@
 import ProjectCard from "./project-card";
 
-const projects1 = [
+// const projects1 = [
 
-];
+// ];
 
 const projects2 = [
   {
@@ -41,9 +41,9 @@ const ProjectsSection = () => {
 
       <div className="grid items-start grid-cols-1 gap-6 md:gap-3 md:grid-cols-3">
         <div className="flex flex-col gap-6 cols-span-1">
-          {projects1.map((project) => (
+          {/* {projects1.map((project) => (
             <ProjectCard key={project.id} {...project} />
-          ))}
+          ))} */}
         </div>
         
         <div className="flex flex-col gap-6 cols-span-1">

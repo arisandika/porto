@@ -46,7 +46,7 @@ const NeueHaas = localFont({
 export const metadata: Metadata = {
   title: "Ari Sandika – Fullstack Web Developer",
   description:
-    "Ari Sandika is a fullstack web developer building scalable web applications and digital platforms using modern frameworks for ERP, recruitment, e-commerce, and business systems.",
+    "I’m a fullstack web developer with a focus on building software for real business operations. Includes systems for ERP, recruitment, e-commerce, project management, and other internal business platforms.",
 };
 
 export default function RootLayout({

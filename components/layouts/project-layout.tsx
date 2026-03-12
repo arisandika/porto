@@ -43,7 +43,7 @@ const ProjectLayout = ({
       <header>
         <figure className="relative w-full overflow-hidden bg-white/5 h-[60vw] md:h-screen my-auto">
           {loading && (
-            <div className="absolute inset-0 z-10 flex items-center justify-center bg-black/10">
+            <div className="absolute inset-0 flex items-center justify-center bg-black/10">
               <div className="w-12 h-12 bg-white/10 animate-[spin_3s_linear_infinite]" />
             </div>
           )}
@@ -65,12 +65,11 @@ const ProjectLayout = ({
             <Image
               src={thumbnailSrc}
               alt={thumbnailAlt}
-              width={1608}
-              height={947}
-              quality={75}
+              fill
               priority
-              sizes="100vw"
+              quality={100}
               onLoad={() => setLoading(false)}
+              sizes="(max-width:768px) 100vw, (max-width:1200px) 90vw, 1200px"
               className={`object-cover h-full w-full transition-opacity duration-500 ${
                 loading ? "opacity-0" : "opacity-100"
               }`}

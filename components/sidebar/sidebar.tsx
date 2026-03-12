@@ -97,7 +97,7 @@ const Sidebar = ({ isOpen, setIsOpen }: SidebarProps) => {
                 height={100}
                 priority
                 quality={90}
-                sizes="max-width:768px"
+                sizes="(max-width:768px) 100vw, (max-width:1280px) 80vw, 1200px"
                 className={`w-12 h-12}`}
               />
               {/* <h3 className="flex items-end gap-1 px-1 pb-4 transition-colors cursor-default group w-fit hover:text-yellow-300">

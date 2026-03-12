@@ -58,7 +58,8 @@ const Media = ({
           height={height}
           priority={priority}
           quality={quality}
-          sizes="(max-width: 1608px) 100vw, 1608px"
+          onLoad={() => setLoading(false)}
+          sizes="(max-width:768px) 100vw, (max-width:1280px) 80vw, 1200px"
           className={`w-full h-auto transition-opacity duration-500 ${
             loading ? "opacity-0" : "opacity-100"
           }`}

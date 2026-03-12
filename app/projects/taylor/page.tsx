@@ -10,7 +10,7 @@ const ProjectTaylor = () => {
       thumbnailAlt="Animated wedding invitation concept for Taylor Swift and Travis Kelce with storytelling cartoon characters"
       desc1="A digital wedding invitation concept inspired by the Toondangan animation style, featuring cartoon-based storytelling that illustrates the romantic journey of Taylor Swift and Travis Kelce."
       desc2="The project focuses on interactive web experiences such as animated characters, scroll-based motion effects, background music, RSVP integration, and a digital guestbook to create a cinematic invitation experience."
-      role="Web Developer"
+      role="Frontend Web Developer"
       collaborators={["Ari", "Rico", "Gaby"]}
       duration="2 Weeks"
       tools={["Next.js", "Tailwind CSS", "Framer Motion"]}

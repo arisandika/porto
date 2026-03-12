@@ -29,7 +29,7 @@ const ProjectCard = ({
   return (
     <Link href={href} className="flex flex-col gap-4 group">
       <figure
-        className="relative overflow-hidden border bg-neutral-900 border-white/5 transform-gpu"
+        className={`relative overflow-hidden border bg-neutral-900 border-white/5 transform-gpu ${!isVideo ? "transition-opacity group hover:opacity-80" : ""}`}
         style={{
           maxWidth: `${width}px`,
           aspectRatio: `${width}/${height}`,
@@ -62,7 +62,7 @@ const ProjectCard = ({
             alt={title}
             width={width}
             height={height}
-            quality={75}
+            quality={90}
             loading="lazy"
             onLoad={() => setLoading(false)}
             sizes="(max-width: 768px) 100vw, 33vw"
@@ -78,11 +78,11 @@ const ProjectCard = ({
           <span className="font-medium text-white">{title}</span>
 
           {subtitle && (
-            <span className="font-light text-white/40">{subtitle}</span>
+            <span className="text-xs font-light tracking-widest text-white uppercase opacity-40">{subtitle}</span>
           )}
         </div>
 
-        <span className="font-light text-white/40">{year}</span>
+        <span className="text-xs font-light tracking-widest text-white uppercase opacity-40">{year}</span>
       </div>
     </Link>
   );

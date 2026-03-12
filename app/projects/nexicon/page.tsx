@@ -4,21 +4,21 @@ import Media from "@/components/project/media";
 const ProjectNexicon = () => {
   return (
     <ProjectLayout
-      title="Toondangan Landing Page"
-      category="Media Creative"
+      title=""
+      category=""
       thumbnailSrc="/assets/projects/nexicon/thumbnail.webp"
-      thumbnailAlt="Landing page website for Toondangan animated digital wedding invitation service"
-      desc1="A modern landing page built for Toondangan, a digital wedding invitation service that focuses on custom illustrations, animated storytelling, and interactive web experiences to capture each couple’s unique love story."
-      desc2="The website highlights core features such as RSVP confirmation, digital envelopes, countdown timers, gallery sections, Google Maps integration, automatic WhatsApp sharing, and customizable background music to create a complete digital invitation ecosystem."
+      thumbnailAlt=""
+      desc1=""
+      desc2=""
       role="Fullstack Web Developer"
-      collaborators={["Ari", "Rico", "Gaby"]}
-      duration="2 Weeks"
-      tools={["Next.js", "Tailwind CSS", "Framer Motion"]}
+      collaborators={["Ari", "Nurul", "Ikhsan"]}
+      duration="6 Months"
+      tools={["Laravel 12", "Filament", "Spatie", "Livewire", "Tailwind CSS"]}
       liveUrl="https://toondangan.com/"
       docUrl="https://www.instagram.com/toondangan.art/"
     >
       <div className="flex flex-col w-full gap-4">
-        <Media
+        {/* <Media
           src="/assets/projects/toondangan/video-1.mp4"
           type="video"
           poster="/assets/projects/toondangan/thumbnail.webp"
@@ -38,7 +38,7 @@ const ProjectNexicon = () => {
 
         <p className="text-xs font-light tracking-widest text-white uppercase opacity-60">
           Dynamic pricing list
-        </p>
+        </p> */}
       </div>
     </ProjectLayout>
   );

@@ -10,7 +10,7 @@ const ProjectToondangan = () => {
       thumbnailAlt="Landing page website for Toondangan animated digital wedding invitation service"
       desc1="A modern landing page built for Toondangan, a digital wedding invitation service that focuses on custom illustrations, animated storytelling, and interactive web experiences to capture each couple’s unique love story."
       desc2="The website highlights core features such as RSVP confirmation, digital envelopes, countdown timers, gallery sections, Google Maps integration, automatic WhatsApp sharing, and customizable background music to create a complete digital invitation ecosystem."
-      role="Fullstack Web Developer"
+      role="Frontend Web Developer"
       collaborators={["Ari", "Rico", "Gaby"]}
       duration="2 Weeks"
       tools={["Next.js", "Tailwind CSS", "Framer Motion"]}
@@ -39,6 +39,13 @@ const ProjectToondangan = () => {
         <p className="text-xs font-light tracking-widest text-white uppercase opacity-60">
           Dynamic pricing list
         </p>
+
+        <Media
+          src="/assets/projects/toondangan/image-1.webp"
+          alt="images 1"
+          width={1608}
+          height={973}
+        />
       </div>
     </ProjectLayout>
   );

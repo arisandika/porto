@@ -11,6 +11,16 @@ const projects1 = [
     href: "/projects/nexicon",
     thumbnailSrc: "/assets/projects/nexicon/card.webp",
   },
+  {
+    id: 2,
+    title: "Dimensional Search Franchise Landing Page",
+    subtitle: "Corporate Landing Page",
+    year: "2026",
+    width: 1080,
+    height: 740,
+    href: "/projects/dimentional",
+    thumbnailSrc: "/assets/projects/dimentional/card.webp",
+  },
 ];
 
 const projects2 = [

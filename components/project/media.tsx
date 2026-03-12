@@ -21,7 +21,6 @@ const Media = ({
   width,
   height,
   priority = false,
-  quality = 90,
   type = "image",
   poster,
   widthVideo,
@@ -32,7 +31,7 @@ const Media = ({
     <figure className="relative w-full overflow-hidden bg-white transform-gpu">
       {loading && (
         <div className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-neutral-900 animate-pulse">
-          <span className="text-[10px] tracking-[0.2em] text-white/30 uppercase font-light">
+          <span className="text-xs font-light tracking-widest text-white uppercase opacity-40">
             Generating Content...
           </span>
         </div>
@@ -59,7 +58,7 @@ const Media = ({
           width={width}
           height={height}
           priority={priority}
-          quality={80}
+          quality={90}
           onLoad={() => setLoading(false)}
           sizes="(max-width: 768px) 100vw, 80vw"
           className={`w-full h-auto transform-gpu transition-opacity duration-500 ${

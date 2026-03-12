@@ -44,7 +44,7 @@ const ProjectLayout = ({
         <figure className="relative w-full overflow-hidden bg-neutral-900 h-[60vw] md:h-screen my-auto transform-gpu">
           {loading && (
             <div className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-neutral-900 animate-pulse">
-              <span className="text-[10px] tracking-[0.2em] text-white/30 uppercase font-light">
+              <span className="text-xs font-light tracking-widest text-white uppercase opacity-40">
                 Generating Content...
               </span>
             </div>

@@ -6,7 +6,7 @@ const ProjectNexicon = () => {
     <ProjectLayout
       title="Toondangan Landing Page"
       category="Media Creative"
-      thumbnailSrc="/assets/projects/nexicon/thumbnail-2.webp"
+      thumbnailSrc="/assets/projects/nexicon/thumbnail.webp"
       thumbnailAlt="Landing page website for Toondangan animated digital wedding invitation service"
       desc1="A modern landing page built for Toondangan, a digital wedding invitation service that focuses on custom illustrations, animated storytelling, and interactive web experiences to capture each couple’s unique love story."
       desc2="The website highlights core features such as RSVP confirmation, digital envelopes, countdown timers, gallery sections, Google Maps integration, automatic WhatsApp sharing, and customizable background music to create a complete digital invitation ecosystem."

@@ -9,7 +9,7 @@ const projects1 = [
     width: 1080,
     height: 740,
     href: "/projects/nexicon",
-    thumbnailSrc: "/assets/projects/nexicon/card-2.webp",
+    thumbnailSrc: "/assets/projects/nexicon/card.webp",
   },
 ];
 

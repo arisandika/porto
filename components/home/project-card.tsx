@@ -62,11 +62,11 @@ const ProjectCard = ({
         ) : (
           <Image
             src={thumbnailSrc}
-            alt={`Card project ${title}`}
+            alt={title}
             width={width}
             height={height}
-            quality={90}
-            sizes="max-width:1608px"
+            quality={70}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             loading="lazy"
             onLoad={() => setLoading(false)}
             className={`w-full h-full object-cover ${

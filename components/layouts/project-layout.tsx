@@ -36,7 +36,6 @@ const ProjectLayout = ({
   children,
 }: ProjectLayoutProps) => {
   const [loading, setLoading] = useState(true);
-
   const isVideo = /\.(mp4|webm|ogg)$/i.test(thumbnailSrc);
 
   return (
@@ -68,9 +67,9 @@ const ProjectLayout = ({
               alt={thumbnailAlt}
               width={1608}
               height={947}
-              quality={100}
-              sizes="max-width:1608px"
-              loading="lazy"
+              quality={75}
+              priority
+              sizes="100vw"
               onLoad={() => setLoading(false)}
               className={`object-cover h-full w-full transition-opacity duration-500 ${
                 loading ? "opacity-0" : "opacity-100"

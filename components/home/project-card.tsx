@@ -31,10 +31,10 @@ const ProjectCard = ({
     <Link
       href={href}
       aria-label={`View project ${title}`}
-      className={`flex flex-col gap-4 transition-opacity ${!isVideo ? "transition-opacity group hover:opacity-90" : ""}`}
+      className="flex flex-col gap-4"
     >
       <figure
-        className="relative overflow-hidden border bg-white/5 border-white/5"
+        className={`relative overflow-hidden border bg-white/5 border-white/5 transition-opacity ${!isVideo ? "transition-opacity group hover:opacity-80" : ""}`}
         style={{
           maxWidth: `${width}px`,
           aspectRatio: `${width}/${height}`,
@@ -62,11 +62,11 @@ const ProjectCard = ({
         ) : (
           <Image
             src={thumbnailSrc}
-            alt={`Thumbnail project ${title}`}
+            alt={`Card project ${title}`}
             width={width}
             height={height}
             quality={90}
-            sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 33vw"
+            sizes="max-width:1608px"
             loading="lazy"
             onLoad={() => setLoading(false)}
             className={`w-full h-full object-cover ${

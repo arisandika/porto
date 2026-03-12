@@ -42,7 +42,7 @@ const ProjectLayout = ({
   return (
     <article className="flex flex-col w-full gap-6 md:gap-8">
       <header>
-        <figure className="relative w-full overflow-hidden bg-white/5 aspect-[16/9]">
+        <figure className="relative w-full overflow-hidden bg-white/5 h-[60vw] md:h-screen my-auto">
           {loading && (
             <div className="absolute inset-0 z-10 flex items-center justify-center bg-black/10">
               <div className="w-12 h-12 bg-white/10 animate-[spin_3s_linear_infinite]" />
@@ -66,12 +66,13 @@ const ProjectLayout = ({
             <Image
               src={thumbnailSrc}
               alt={thumbnailAlt}
-              fill
-              priority
+              width={1608}
+              height={947}
               quality={100}
+              sizes="max-width:1608px"
+              loading="lazy"
               onLoad={() => setLoading(false)}
-              sizes="(max-width:768px) 100vw, (max-width:1200px) 90vw, 1200px"
-              className={`object-cover transition-opacity duration-500 ${
+              className={`object-cover h-full w-full transition-opacity duration-500 ${
                 loading ? "opacity-0" : "opacity-100"
               }`}
             />
@@ -101,14 +102,14 @@ const ProjectLayout = ({
 
           <section className="grid grid-cols-2 gap-4 md:grid-cols-4">
             <div className="flex flex-col gap-1">
-              <span className="text-xs tracking-widest uppercase text-white/40">
+              <span className="text-xs font-light tracking-widest text-white uppercase opacity-40">
                 Role
               </span>
               <span className="text-sm text-white">{role}</span>
             </div>
 
             <div className="flex flex-col gap-1">
-              <span className="text-xs tracking-widest uppercase text-white/40">
+              <span className="text-xs font-light tracking-widest text-white uppercase opacity-40">
                 Collaborators
               </span>
 
@@ -118,14 +119,14 @@ const ProjectLayout = ({
             </div>
 
             <div className="flex flex-col gap-1">
-              <span className="text-xs tracking-widest uppercase text-white/40">
+              <span className="text-xs font-light tracking-widest text-white uppercase opacity-40">
                 Duration
               </span>
               <span className="text-sm text-white">{duration}</span>
             </div>
 
             <div className="flex flex-col gap-1">
-              <span className="text-xs tracking-widest uppercase text-white/40">
+              <span className="text-xs font-light tracking-widest text-white uppercase opacity-40">
                 Tools
               </span>
 

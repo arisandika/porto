@@ -6,7 +6,7 @@ const ProjectTaylor = () => {
     <ProjectLayout
       title="Taylor & Travis Animated Wedding Invitation"
       category="Digital Wedding Invitation"
-      thumbnailSrc="/assets/images/projects/taylor/thumbnail.webp"
+      thumbnailSrc="/assets/projects/taylor/thumbnail.webp"
       thumbnailAlt="Animated wedding invitation concept for Taylor Swift and Travis Kelce with storytelling cartoon characters"
       desc1="A digital wedding invitation concept inspired by the Toondangan animation style, featuring cartoon-based storytelling that illustrates the romantic journey of Taylor Swift and Travis Kelce."
       desc2="The project focuses on interactive web experiences such as animated characters, scroll-based motion effects, background music, RSVP integration, and a digital guestbook to create a cinematic invitation experience."
@@ -14,29 +14,29 @@ const ProjectTaylor = () => {
       collaborators={["Ari", "Rico", "Gaby"]}
       duration="2 Weeks"
       tools={["Next.js", "Tailwind CSS", "Framer Motion"]}
-      liveUrl="#"
-      docUrl="#"
+      liveUrl="https://taylortravis.toondangan.com/"
+      docUrl="https://www.instagram.com/toondangan.art/reel/DTKMfnmkYwZ/"
     >
       <div className="flex flex-col w-full gap-4">
         <Media
-          src="/assets/videos/projects/taylor/video-1.mp4"
+          src="/assets/projects/taylor/video-1.mp4"
           type="video"
-          poster=""
+          poster="/assets/projects/taylor/thumbnail.webp"
           widthVideo="md:w-[65%] scale-130 aspect-[3/4] md:scale-100 md:aspect-auto"
         />
 
-        <p className="text-xs uppercase opacity-60">
+        <p className="text-xs font-light tracking-widest text-white uppercase opacity-60">
           Love Story Timeline Animation
         </p>
 
         <Media
-          src="/assets/videos/projects/taylor/video-2.mp4"
+          src="/assets/projects/taylor/video-2.mp4"
           type="video"
-          poster=""
+          poster="/assets/projects/taylor/thumbnail.webp"
           widthVideo="md:w-[65%] scale-130 aspect-[3/4] md:scale-100 md:aspect-auto"
         />
 
-        <p className="text-xs uppercase opacity-60">
+        <p className="text-xs font-light tracking-widest text-white uppercase opacity-60">
           RSVP Form & Digital Guestbook
         </p>
       </div>

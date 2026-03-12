@@ -1,8 +1,17 @@
 import ProjectCard from "./project-card";
 
-// const projects1 = [
-
-// ];
+const projects1 = [
+  {
+    id: 1,
+    title: "INTERA-ERP",
+    subtitle: "Business System",
+    year: "2026",
+    width: 1080,
+    height: 740,
+    href: "/projects/nexicon",
+    thumbnailSrc: "/assets/projects/nexicon/card-2.webp",
+  },
+];
 
 const projects2 = [
   {
@@ -13,7 +22,7 @@ const projects2 = [
     width: 1080,
     height: 1080,
     href: "/projects/taylor",
-    thumbnailSrc: "/assets/videos/projects/taylor/video-1.mp4",
+    thumbnailSrc: "/assets/projects/taylor/video-1.mp4",
   },
 ];
 
@@ -24,9 +33,9 @@ const projects3 = [
     subtitle: "Media Creative",
     year: "2026",
     width: 1080,
-    height: 810,
+    height: 740,
     href: "/projects/toondangan",
-    thumbnailSrc: "/assets/images/projects/toondangan/thumbnail.webp",
+    thumbnailSrc: "/assets/projects/toondangan/card.webp",
   },
 ];
 
@@ -41,17 +50,17 @@ const ProjectsSection = () => {
 
       <div className="grid items-start grid-cols-1 gap-6 md:gap-3 md:grid-cols-3">
         <div className="flex flex-col gap-6 cols-span-1">
-          {/* {projects1.map((project) => (
+          {projects1.map((project) => (
             <ProjectCard key={project.id} {...project} />
-          ))} */}
+          ))}
         </div>
-        
+
         <div className="flex flex-col gap-6 cols-span-1">
           {projects2.map((project) => (
             <ProjectCard key={project.id} {...project} />
           ))}
         </div>
-        
+
         <div className="flex flex-col gap-6 cols-span-1">
           {projects3.map((project) => (
             <ProjectCard key={project.id} {...project} />

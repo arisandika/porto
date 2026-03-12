@@ -41,10 +41,12 @@ const ProjectLayout = ({
   return (
     <article className="flex flex-col w-full gap-6 md:gap-8">
       <header>
-        <figure className="relative w-full overflow-hidden bg-white/5 h-[60vw] md:h-screen my-auto">
+        <figure className="relative w-full overflow-hidden bg-neutral-900 h-[60vw] md:h-screen my-auto transform-gpu">
           {loading && (
-            <div className="absolute inset-0 flex items-center justify-center bg-black/10">
-              <div className="w-12 h-12 bg-white/10 animate-[spin_3s_linear_infinite]" />
+            <div className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-neutral-900 animate-pulse">
+              <span className="text-[10px] tracking-[0.2em] text-white/30 uppercase font-light">
+                Generating Content...
+              </span>
             </div>
           )}
 
@@ -55,9 +57,9 @@ const ProjectLayout = ({
               muted
               loop
               playsInline
-              preload="metadata"
+              preload="auto"
               onLoadedData={() => setLoading(false)}
-              className={`w-full h-full object-cover transition-opacity duration-500 ${
+              className={`w-full h-full object-cover transition-opacity duration-700 transform-gpu ${
                 loading ? "opacity-0" : "opacity-100"
               }`}
             />
@@ -67,10 +69,10 @@ const ProjectLayout = ({
               alt={thumbnailAlt}
               fill
               priority
-              quality={100}
+              quality={80}
               onLoad={() => setLoading(false)}
-              sizes="(max-width:768px) 100vw, (max-width:1200px) 90vw, 1200px"
-              className={`object-cover h-full w-full transition-opacity duration-500 ${
+              sizes="100vw"
+              className={`object-cover h-full w-full transition-opacity duration-700 transform-gpu ${
                 loading ? "opacity-0" : "opacity-100"
               }`}
             />

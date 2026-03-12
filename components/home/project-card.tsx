@@ -24,25 +24,22 @@ const ProjectCard = ({
   thumbnailSrc,
 }: ProjectCardProps) => {
   const [loading, setLoading] = useState(true);
-
   const isVideo = /\.(mp4|webm|ogg)$/i.test(thumbnailSrc);
 
   return (
-    <Link
-      href={href}
-      aria-label={`View project ${title}`}
-      className="flex flex-col gap-4"
-    >
+    <Link href={href} className="flex flex-col gap-4 group">
       <figure
-        className={`relative overflow-hidden border bg-white/5 border-white/5 transition-opacity ${!isVideo ? "transition-opacity group hover:opacity-80" : ""}`}
+        className="relative overflow-hidden border bg-neutral-900 border-white/5 transform-gpu"
         style={{
           maxWidth: `${width}px`,
           aspectRatio: `${width}/${height}`,
         }}
       >
         {loading && (
-          <div className="absolute inset-0 flex items-center justify-center bg-black/10">
-            <div className="w-12 h-12 bg-white/10 animate-[spin_3s_linear_infinite]" />
+          <div className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-neutral-900 animate-pulse">
+            <span className="text-[10px] tracking-[0.2em] text-white/30 uppercase font-light">
+              Generating Content...
+            </span>
           </div>
         )}
 
@@ -53,23 +50,23 @@ const ProjectCard = ({
             loop
             autoPlay
             playsInline
-            preload="none"
+            preload="metadata"
             onLoadedData={() => setLoading(false)}
-            className={`w-full h-full object-cover ${
+            className={`w-full h-full object-cover transform-gpu transition-opacity duration-500 ${
               loading ? "opacity-0" : "opacity-100"
             }`}
           />
         ) : (
           <Image
             src={thumbnailSrc}
-            alt={`Thumbnail project ${title}`}
+            alt={title}
             width={width}
             height={height}
-            quality={90}
-            sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 33vw"
+            quality={75}
             loading="lazy"
             onLoad={() => setLoading(false)}
-            className={`w-full h-full object-cover ${
+            sizes="(max-width: 768px) 100vw, 33vw"
+            className={`w-full h-full object-cover transform-gpu transition-opacity duration-500 ${
               loading ? "opacity-0" : "opacity-100"
             }`}
           />

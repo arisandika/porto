@@ -29,10 +29,12 @@ const Media = ({
   const [loading, setLoading] = useState(true);
 
   return (
-    <figure className="relative w-full overflow-hidden bg-white">
+    <figure className="relative w-full overflow-hidden bg-neutral-900 transform-gpu">
       {loading && (
-        <div className="absolute inset-0 flex items-center justify-center bg-black/10">
-          <div className="w-12 h-12 bg-white/10 animate-[spin_3s_linear_infinite]" />
+        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-neutral-900 animate-pulse">
+          <span className="text-[10px] tracking-[0.2em] text-white/30 uppercase font-light">
+            Generating Content...
+          </span>
         </div>
       )}
 
@@ -46,7 +48,7 @@ const Media = ({
           playsInline
           preload="metadata"
           onLoadedData={() => setLoading(false)}
-          className={`flex mx-auto ${widthVideo} transition-opacity duration-500 ${
+          className={`flex mx-auto ${widthVideo} transform-gpu transition-opacity duration-500 ${
             loading ? "opacity-0" : "opacity-100"
           }`}
         />
@@ -57,10 +59,10 @@ const Media = ({
           width={width}
           height={height}
           priority={priority}
-          quality={quality}
+          quality={80}
           onLoad={() => setLoading(false)}
-          sizes="(max-width:768px) 100vw, (max-width:1280px) 80vw, 1200px"
-          className={`w-full h-auto transition-opacity duration-500 ${
+          sizes="(max-width: 768px) 100vw, 80vw"
+          className={`w-full h-auto transform-gpu transition-opacity duration-500 ${
             loading ? "opacity-0" : "opacity-100"
           }`}
         />

@@ -4,7 +4,7 @@ const projects1 = [
   {
     id: 1,
     title: "INTERA-ERP",
-    subtitle: "Business System",
+    category: "Business System",
     year: "2026",
     width: 1080,
     height: 740,
@@ -13,8 +13,8 @@ const projects1 = [
   },
   {
     id: 2,
-    title: "Dimensional Search Franchise Landing Page",
-    subtitle: "Corporate Landing Page",
+    title: "Dimensional Search Franchise",
+    category: "Corporate Landing Page",
     year: "2026",
     width: 1080,
     height: 740,
@@ -27,12 +27,22 @@ const projects2 = [
   {
     id: 1,
     title: "Taylor & Travis Animated Wedding Invitation",
-    subtitle: "Digital Wedding Invitation",
+    category: "Digital Wedding Invitation",
     year: "2026",
     width: 1080,
     height: 1080,
     href: "/projects/taylor",
     thumbnailSrc: "/assets/projects/taylor/video-1.mp4",
+  },
+  {
+    id: 2,
+    title: "12 Days of Christmas Giveaway Event Platform",
+    category: "Event Campaign Website",
+    year: "2025",
+    width: 1080,
+    height: 740,
+    href: "/projects/smalltowntnchristmas",
+    thumbnailSrc: "/assets/projects/smalltowntnchristmas/card.webp",
   },
 ];
 
@@ -40,7 +50,7 @@ const projects3 = [
   {
     id: 1,
     title: "Toondangan Landing Page",
-    subtitle: "Media Creative",
+    category: "Media Creative",
     year: "2026",
     width: 1080,
     height: 740,
@@ -52,7 +62,7 @@ const projects3 = [
 const ProjectsSection = () => {
   return (
     <section className="flex flex-col w-full">
-      <div className="flex items-center w-full pb-4 mb-0 md:mb-8 border-b border-white/10">
+      <div className="flex items-center w-full pb-4 mb-6 md:mb-8 border-b border-white/10">
         <span className="text-xs font-light tracking-widest text-white uppercase opacity-40">
           Craft
         </span>

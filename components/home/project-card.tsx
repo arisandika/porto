@@ -6,7 +6,7 @@ import { useState } from "react";
 
 interface ProjectCardProps {
   title: string;
-  subtitle?: string;
+  category?: string;
   year: string;
   height: number;
   width: number;
@@ -16,7 +16,7 @@ interface ProjectCardProps {
 
 const ProjectCard = ({
   title,
-  subtitle,
+  category,
   year,
   height,
   width,
@@ -27,7 +27,7 @@ const ProjectCard = ({
   const isVideo = /\.(mp4|webm|ogg)$/i.test(thumbnailSrc);
 
   return (
-    <Link href={href} className="flex flex-col gap-4 group">
+  <Link href={href} className="flex flex-col gap-3 md:gap-4 group">
       <figure
         className={`relative overflow-hidden border bg-neutral-900 border-white/5 transform-gpu ${!isVideo ? "transition-opacity group hover:opacity-80" : ""}`}
         style={{
@@ -77,8 +77,8 @@ const ProjectCard = ({
         <div className="flex flex-col gap-0.5">
           <span className="font-medium text-white">{title}</span>
 
-          {subtitle && (
-            <span className="text-xs font-light tracking-widest text-white uppercase opacity-40">{subtitle}</span>
+          {category && (
+            <span className="text-xs font-light tracking-widest text-white uppercase opacity-40">{category}</span>
           )}
         </div>
 

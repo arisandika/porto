@@ -4,12 +4,12 @@ import Media from "@/components/project/media";
 const ProjectDimentional = () => {
   return (
     <ProjectLayout
-      title="Dimensional Search Franchise Landing Page"
-      category="Corporate Landing Page"
+      title="Dimensional Search Franchise"
+      category="Corporate Website"
       thumbnailSrc="/assets/projects/dimentional/thumbnail.png"
-      thumbnailAlt="Corporate landing page for Dimensional Search executive recruitment franchise platform"
-      desc1="A corporate landing page developed for Dimensional Search, an executive recruitment franchise platform that helps professionals transition into business ownership in the executive search industry."
-      desc2="The website focuses on communicating franchise opportunities, leadership credibility, and growth potential through structured sections such as business model explanation, market expansion, ownership process, FAQs, blog insights, and integrated contact funnels."
+      thumbnailAlt="Corporate franchise website for Dimensional Search executive recruitment network"
+      desc1="A corporate website platform developed for Dimensional Search, an executive recruitment franchise network that helps professionals transition into business ownership through a structured executive search model."
+      desc2="The project involved building a scalable multi-page architecture including dynamic franchise pages, informational sections, and marketing-focused content designed to highlight franchise opportunities, leadership expertise, and growth potential across the network."
       role="Frontend Web Developer"
       collaborators={["Agency Development Team", "UI/UX Design Team"]}
       duration="3 Weeks"
@@ -18,10 +18,10 @@ const ProjectDimentional = () => {
       docUrl="#"
     >
       <div className="flex flex-col w-full gap-4">
-        {/* <Media
-          src="/assets/projects/toondangan/video-1.mp4"
+        <Media
+          src="/assets/projects/dimentional/video-1.mp4"
           type="video"
-          poster="/assets/projects/toondangan/thumbnail.webp"
+          poster="/assets/projects/dimentional/thumbnail.webp"
           widthVideo="w-[100%]"
         />
 
@@ -30,15 +30,48 @@ const ProjectDimentional = () => {
         </p>
 
         <Media
-          src="/assets/projects/toondangan/video-2.mp4"
-          type="video"
-          poster="/assets/projects/toondangan/thumbnail.webp"
-          widthVideo="w-[100%]"
+          src="/assets/projects/dimentional/image-1.webp"
+          alt="Images 1"
+          width={1608}
+          height={1004}
         />
 
         <p className="text-xs font-light tracking-widest text-white uppercase opacity-60">
-          Dynamic pricing list
-        </p> */}
+          About us page
+        </p>
+
+        <Media
+          src="/assets/projects/dimentional/image-2.webp"
+          alt="Images 2"
+          width={1608}
+          height={1004}
+        />
+
+        <p className="text-xs font-light tracking-widest text-white uppercase opacity-60">
+          Why franchise page
+        </p>
+        
+        <Media
+          src="/assets/projects/dimentional/image-3.webp"
+          alt="Images 3"
+          width={1608}
+          height={1004}
+        />
+
+        <p className="text-xs font-light tracking-widest text-white uppercase opacity-60">
+          Business model page
+        </p>
+        
+        <Media
+          src="/assets/projects/dimentional/image-4.webp"
+          alt="Images 4"
+          width={1608}
+          height={1004}
+        />
+
+        <p className="text-xs font-light tracking-widest text-white uppercase opacity-60">
+          Discovery process page
+        </p>
       </div>
     </ProjectLayout>
   );

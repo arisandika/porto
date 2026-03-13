@@ -42,7 +42,7 @@ const ProjectToondangan = () => {
 
         <Media
           src="/assets/projects/toondangan/image-1.webp"
-          alt="images 1"
+          alt="Images 1"
           width={1608}
           height={973}
         />

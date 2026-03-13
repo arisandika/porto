@@ -28,7 +28,11 @@ const Media = ({
   const [loading, setLoading] = useState(true);
 
   return (
-    <figure className="relative w-full overflow-hidden bg-white transform-gpu">
+    <figure
+      className={`relative w-full overflow-hidden transform-gpu ${
+        loading ? "bg-neutral-900" : "bg-white"
+      }`}
+    >
       {loading && (
         <div className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-neutral-900 animate-pulse">
           <span className="text-xs font-light tracking-widest text-white uppercase opacity-40">

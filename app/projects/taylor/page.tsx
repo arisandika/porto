@@ -26,7 +26,7 @@ const ProjectTaylor = () => {
         />
 
         <p className="text-xs font-light tracking-widest text-white uppercase opacity-60">
-          Love Story Timeline Animation
+          Love story timeline animation
         </p>
 
         <Media
@@ -37,7 +37,7 @@ const ProjectTaylor = () => {
         />
 
         <p className="text-xs font-light tracking-widest text-white uppercase opacity-60">
-          RSVP Form & Digital Guestbook
+          RSVP form & digital guestbook
         </p>
       </div>
     </ProjectLayout>

@@ -71,7 +71,7 @@ const ProjectLayout = ({
               priority
               quality={100}
               onLoad={() => setLoading(false)}
-              sizes="(max-width:1872px) 100vw, (max-width:1872px) 90vw, 1872px"
+              sizes="(max-width:1872px) 100vw, (max-width:1872px) 100vw, 1872px"
               className={`object-cover h-full w-full transition-opacity duration-700 transform-gpu ${
                 loading ? "opacity-0" : "opacity-100"
               }`}

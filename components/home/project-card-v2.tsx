@@ -54,13 +54,16 @@ const ProjectCard = ({
   }, [isVideo]);
 
   return (
-    <Link href={href} className="relative flex flex-col gap-3 md:gap-4 group">
-      {/* <div className="pointer-events-none absolute left-0 top-0 h-[90%] w-px z-20 bg-gradient-to-b from-transparent via-[#f2f2f212] to-transparent transition-colors duration-500"></div>
+    <Link
+      href={href}
+      className="relative rounded-[24px] flex flex-col gap-3 p-2 md:gap-4 group"
+    >
+      <div className="pointer-events-none absolute left-0 top-0 h-[90%] w-px z-20 bg-gradient-to-b from-transparent via-[#f2f2f212] to-transparent transition-colors duration-500"></div>
       <div className="pointer-events-none absolute right-0 top-0 h-[90%] w-px z-20 bg-gradient-to-b from-transparent via-[#f2f2f212] to-transparent transition-colors duration-500"></div>
-      <div className="pointer-events-none absolute top-0 left-[4%] w-[92%] h-px z-10 bg-gradient-to-r from-transparent via-[#f8f8f853] to-transparent transition-colors duration-500"></div> */}
+      <div className="pointer-events-none absolute top-0 left-[4%] w-[92%] h-px z-10 bg-gradient-to-r from-transparent via-[#f8f8f853] to-transparent transition-colors duration-500"></div>
 
       <figure
-        className="relative overflow-hidden transform-gpu"
+        className="relative rounded-[16px] overflow-hidden transform-gpu"
         style={{
           maxWidth: `${width}px`,
           aspectRatio: `${width}/${height}`,
@@ -136,14 +139,12 @@ const ProjectCard = ({
           <span className="font-medium text-white transition-colors duration-500 group-hover/card:text-gray-300">
             {title || "Untitled Project"}
           </span>
-          {category && (
-            <span className="text-xs font-light tracking-widest text-white uppercase opacity-40">
-              {category}
-            </span>
-          )}
+          <span className="text-xs font-light tracking-widest text-white uppercase opacity-40">
+            {category || "Category"}
+          </span>
         </div>
         <span className="text-xs font-light tracking-widest text-white uppercase opacity-40">
-          {year}
+          {year || 2026}
         </span>
       </div>
     </Link>

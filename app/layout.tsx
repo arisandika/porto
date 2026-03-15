@@ -57,7 +57,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${GeistMono.className} font-mono bg-[#111111]  text-sm font-medium text-white selection:text-yellow-300 antialiased no-scrollbar`}
+        className={`${GeistMono.className} font-mono bg-[#111111] text-sm tracking-wide font-medium text-white selection:text-yellow-300 antialiased no-scrollbar`}
       >
         <div className="flex flex-col items-center border-b border-solid z-200 border-neutral-800">
           <MainLayout>{children}</MainLayout>

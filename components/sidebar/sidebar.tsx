@@ -100,12 +100,6 @@ const Sidebar = ({ isOpen, setIsOpen }: SidebarProps) => {
                 sizes="(max-width:768px) 100vw, (max-width:1280px) 80vw, 1200px"
                 className={`w-12 h-12}`}
               />
-              {/* <h3 className="flex items-end gap-1 px-1 pb-4 transition-colors cursor-default group w-fit hover:text-yellow-300">
-                Hello There{" "}
-                <div className="transition rotate-0 group-hover:rotate-[-45deg]">
-                  🤙🏻
-                </div>
-              </h3> */}
             </div>
             <nav className="flex flex-col gap-3">
               {navLinks.map((link) => (

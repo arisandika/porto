@@ -66,7 +66,7 @@ const ProjectCard = ({
           aspectRatio: `${width}/${height}`,
         }}
       >
-        <div className="absolute inset-0 z-0 bg-gradient-to-b from-[#252525] from-[1%] via-[#282828] via-[#191919] via-[5%] to-[#111]" />
+        <div className={`absolute inset-0 z-0 bg-gradient-to-b ${isVideo ? 'from-[#272727] from-[1%] via-[#232323]' : 'from-[#252525] from-[1%] via-[#282828]'} via-[#191919] via-[5%] to-[#111]`} />
 
         {!isVideo && (
           <div

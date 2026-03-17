@@ -35,7 +35,7 @@ const Media = ({
     >
       {loading && (
         <div className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-neutral-900 animate-pulse">
-          <span className="text-xs font-light tracking-widest text-white uppercase opacity-40">
+          <span className="text-xs font-light text-white uppercase opacity-40">
             Generating Content...
           </span>
         </div>

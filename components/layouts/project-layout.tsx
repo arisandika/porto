@@ -44,7 +44,7 @@ const ProjectLayout = ({
         <figure className="relative w-full overflow-hidden bg-neutral-900 h-[60vw] md:h-screen my-auto transform-gpu">
           {loading && (
             <div className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-neutral-900 animate-pulse">
-              <span className="text-xs font-light tracking-widest text-white uppercase opacity-40">
+              <span className="text-xs font-light text-white uppercase opacity-40">
                 Generating Content...
               </span>
             </div>
@@ -84,7 +84,7 @@ const ProjectLayout = ({
         <aside className="flex flex-col gap-1 md:col-span-4 md:sticky md:top-8 h-fit">
           <h1 className="text-lg font-medium text-white">{title}</h1>
 
-          <span className="text-xs font-light tracking-widest text-white uppercase opacity-40">
+          <span className="text-xs font-light text-white uppercase opacity-40">
             {category}
           </span>
         </aside>
@@ -102,14 +102,14 @@ const ProjectLayout = ({
 
           <section className="grid grid-cols-2 gap-4 md:grid-cols-4">
             <div className="flex flex-col gap-1">
-              <span className="text-xs font-light tracking-widest text-white uppercase opacity-40">
+              <span className="text-xs font-light text-white uppercase opacity-40">
                 Role
               </span>
               <span className="text-sm text-white">{role}</span>
             </div>
 
             <div className="flex flex-col gap-1">
-              <span className="text-xs font-light tracking-widest text-white uppercase opacity-40">
+              <span className="text-xs font-light text-white uppercase opacity-40">
                 Collaborators
               </span>
 
@@ -119,14 +119,14 @@ const ProjectLayout = ({
             </div>
 
             <div className="flex flex-col gap-1">
-              <span className="text-xs font-light tracking-widest text-white uppercase opacity-40">
+              <span className="text-xs font-light text-white uppercase opacity-40">
                 Duration
               </span>
               <span className="text-sm text-white">{duration}</span>
             </div>
 
             <div className="flex flex-col gap-1">
-              <span className="text-xs font-light tracking-widest text-white uppercase opacity-40">
+              <span className="text-xs font-light text-white uppercase opacity-40">
                 Tools
               </span>
 

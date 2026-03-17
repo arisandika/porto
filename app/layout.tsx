@@ -46,7 +46,7 @@ const NeueHaas = localFont({
 export const metadata: Metadata = {
   title: "Ari Sandika – Fullstack Web Developer",
   description:
-    "I’m a fullstack web developer with a focus on building software for real business operations. Includes systems for ERP, recruitment, e-commerce, project management, and other internal business platforms.",
+    "I'm a fullstack web developer with a focus on building software for real business operations. Includes systems for ERP, recruitment, e-commerce, project management, and other internal business platforms.",
 };
 
 export default function RootLayout({
@@ -55,13 +55,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body
-        className={`${GeistMono.className} font-mono bg-[#111111] text-sm tracking-wide font-medium text-white selection:text-yellow-300 antialiased no-scrollbar`}
+        className={`${NeueHaas.className} bg-[#0e0e0e] text-sm font-medium text-white selection:text-yellow-300 antialiased overflow-x-hidden min-h-screen`}
       >
-        <div className="flex flex-col items-center border-b border-solid z-200 border-neutral-800">
-          <MainLayout>{children}</MainLayout>
-        </div>
+        <MainLayout>{children}</MainLayout>
       </body>
     </html>
   );

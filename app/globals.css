@@ -5,8 +5,35 @@
   --font-mono: var(--font-geist-mono), ui-monospace;
 }
 
-.max-w-8xl {
-  max-width: 1800px;
+:root {
+  --background: #101010;
+  --on-background: #f2f2f2;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #252525 #111;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #252525 !important;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #252525 !important;
+}
+
+.max-w-container {
+  max-width: 830px;
 }
 
 .border-dotted {
@@ -22,4 +49,42 @@
 
 .no-scrollbar::-webkit-scrollbar {
   display: none;
+}
+
+.dot-grid {
+  background-image: radial-gradient(hsla(0, 0%, 100%, 0.03) 1px, transparent 0);
+  background-size: 20px 20px;
+  background-position: -19px -19px;
+}
+
+.section-hero {
+  z-index: 20;
+  background-image: radial-gradient(circle closest-corner at 50% 0, #f2f2f226, #0000);
+}
+
+.hero-bg-gradient {
+  z-index: 30;
+  background-image: linear-gradient(to right, transparent 5%, var(--on-background) 50%, transparent 95%);
+  opacity: .7;
+  filter: blur(100px);
+  border-radius: 2000px;
+  height: 50%;
+  display: none;
+  position: absolute;
+  inset: 96px 24px auto;
+}
+
+.hero-noise {
+  z-index: 40;
+  opacity: 0.2;
+  mix-blend-mode: overlay;
+  background-image: url("https://cdn.prod.website-files.com/63dcb6e1a80e9454b630f4c4/644af0299bc01254815ae442_noise-overlay-2.png");
+  background-position: 0 0;
+  background-size: 200px;
+  display: block;
+  position: absolute;
+  inset: 0%;
+  height: 100vh;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 100%);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 100%);
 }

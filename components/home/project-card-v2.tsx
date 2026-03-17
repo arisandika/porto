@@ -95,7 +95,7 @@ const ProjectCard = ({
 
         {!isLoaded && (
           <div className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-neutral-900 animate-pulse">
-            <span className="text-xs font-light tracking-widest text-white uppercase opacity-40">
+            <span className="text-xs font-light text-white uppercase opacity-40">
               Generating Content...
             </span>
           </div>
@@ -139,11 +139,11 @@ const ProjectCard = ({
           <span className="font-medium text-white transition-colors duration-500 group-hover/card:text-gray-300">
             {title || "Untitled Project"}
           </span>
-          <span className="text-xs font-light tracking-widest text-white uppercase opacity-40">
+          <span className="text-xs font-light text-white uppercase opacity-40">
             {category || "Category"}
           </span>
         </div>
-        <span className="text-xs font-light tracking-widest text-white uppercase opacity-40">
+        <span className="text-xs font-light text-white uppercase opacity-40">
           {year || 2026}
         </span>
       </div>

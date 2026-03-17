@@ -1,5 +1,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Tabs from "@/components/ui/tabs";
+import Button from "@/components/ui/button";
+import Image from "next/image";
 
 interface NavbarProps {
   isOpen: boolean;
@@ -11,78 +14,81 @@ const Navbar = ({ isOpen, setIsOpen }: NavbarProps) => {
   const isProjectDetail = pathname.startsWith("/projects/");
 
   return (
-    <nav className="sticky top-0 z-50 flex items-center justify-between w-full px-3 md:px-0 py-4 transition-opacity duration-300 border-b border-solid md:grid md:grid-cols-12 bg-[#111111] grid-gap border-white/10">
-      <div className="flex items-center justify-between w-full md:hidden">
-        <Link href="/" className="px-1 transition-colors hover:text-yellow-300">
+    <nav className="flex items-center justify-between w-full">
+      <div className="flex items-center gap-4">
+        <Link
+          href="/"
+          className="hidden text-sm transition-colors md:flex hover:text-yellow-300"
+        >
           Ari Sandika
         </Link>
+
+        <Image
+          src="/assets/images/logo-transparent.png"
+          alt="logo"
+          width={100}
+          height={100}
+          priority
+          quality={90}
+          sizes="(max-width:768px) 100vw, (max-width:1280px) 80vw, 1200px"
+          className="flex w-12 h-12 md:hidden"
+        />
+      </div>
+
+      <div className="absolute -translate-x-1/2 left-1/2">
+        <Tabs
+          tabs={[
+            { label: "Work", href: "/" },
+            { label: "Info", href: "/about" },
+          ]}
+        />
+      </div>
+
+      <div className="md:hidden">
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className={`relative flex flex-col items-center justify-center space-y-1 cursor-pointer focus:outline-none group ${isOpen ? "hover:rotate-[-180deg]" : "hover:space-y-[3.2px]"} transition`}
+          className="group flex items-center justify-center relative z-10 [transition:all_0.5s_ease]cursor-pointer border w-[46px] h-[46px] rounded-full transition-all duration-500 bg-white/5 border border-[#f2f2f21a] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:bg-[#f2f2f214] hover:border-[#f2f2f233] shadow-[0_9px_30px_#0000001d] hover:shadow-[0_14px_40px_#0000003d] bg-[#111111]/80 backdrop-blur-lg cursor-pointer outline-none focus-visible:outline-0"
         >
-          <span
-            className={`block w-5 h-[1.5px] bg-white group-hover:bg-yellow-300 transition duration-300 ease-in-out ${
-              isOpen ? "translate-y-[5.4px] rotate-45" : ""
-            }`}
-          />
-          <span
-            className={`block w-5 h-[1.5px] bg-white group-hover:bg-yellow-300 transition duration-300 ease-in-out ${
-              isOpen ? "opacity-0" : "opacity-100"
-            }`}
-          />
-          <span
-            className={`block w-5 h-[1.5px] bg-white group-hover:bg-yellow-300 transition duration-300 ease-in-out ${
-              isOpen ? "-translate-y-[5.4px] -rotate-45" : ""
-            }`}
-          />
+          <svg
+            fill="currentColor"
+            stroke="none"
+            strokeWidth={0}
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-7 h-7 overflow-visible [transition:transform_.35s_ease] group-hover:[transition-delay:.25s] [&_path]:[transition:transform_.35s_ease] group-hover:rotate-45"
+          >
+            <path
+              className="group-hover:[transform:rotate(112.5deg)_translate(-27.2%,-80.2%)]"
+              d="m3.45,8.83c-.39,0-.76-.23-.92-.62-.21-.51.03-1.1.54-1.31L14.71,2.08c.51-.21,1.1.03,1.31.54.21.51-.03,1.1-.54,1.31L3.84,8.75c-.13.05-.25.08-.38.08Z"
+            />
+            <path
+              className="group-hover:[transform:rotate(22.5deg)_translate(15.5%,-23%)]"
+              d="m2.02,17.13c-.39,0-.76-.23-.92-.62-.21-.51.03-1.1.54-1.31L21.6,6.94c.51-.21,1.1.03,1.31.54.21.51-.03,1.1-.54,1.31L2.4,17.06c-.13.05-.25.08-.38.08Z"
+            />
+            <path
+              className="group-hover:[transform:rotate(112.5deg)_translate(-15%,-149.5%)]"
+              d="m8.91,21.99c-.39,0-.76-.23-.92-.62-.21-.51.03-1.1.54-1.31l11.64-4.82c.51-.21,1.1.03,1.31.54.21.51-.03,1.1-.54,1.31l-11.64,4.82c-.13.05-.25.08-.38.08Z"
+            />
+          </svg>
         </button>
       </div>
 
-      <div className="flex-col hidden col-span-12 md:flex md:col-span-6">
-        <div className="flex items-center gap-4">
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className={`relative flex flex-col items-center justify-center space-y-1 cursor-pointer focus:outline-none group ${isOpen ? "hover:rotate-[-180deg]" : "hover:space-y-[3.2px]"} transition`}
-          >
-            <span
-              className={`block w-5 h-[1.5px] bg-white group-hover:bg-yellow-300 transition duration-300 ease-in-out ${
-                isOpen ? "translate-y-[5.4px] rotate-45" : ""
-              }`}
-            />
-            <span
-              className={`block w-5 h-[1.5px] bg-white group-hover:bg-yellow-300 transition duration-300 ease-in-out ${
-                isOpen ? "opacity-0" : "opacity-100"
-              }`}
-            />
-            <span
-              className={`block w-5 h-[1.5px] bg-white group-hover:bg-yellow-300 transition duration-300 ease-in-out ${
-                isOpen ? "-translate-y-[5.4px] -rotate-45" : ""
-              }`}
-            />
-          </button>
-          <Link href="/" className="transition-colors hover:text-yellow-300">
-            Ari Sandika
-          </Link>
-        </div>
-      </div>
+      <div className="items-center hidden gap-2 md:flex">
+        <Button href="https://linkedin.com" showExternalIcon>
+          Linkedin
+        </Button>
+        <Button href="/resume" showExternalIcon>
+          Resume
+        </Button>
 
-      <div className="flex-col items-start hidden col-span-6 md:flex md:col-span-3">
-        <p>Fullstack Web Developer</p>
-      </div>
-
-      <div className="flex-col items-start hidden col-span-6 md:flex md:items-end md:col-span-2">
-        <p>Tangerang, ID</p>
-      </div>
-
-      {isProjectDetail && (
-        <div className="flex-col items-start hidden col-span-6 md:flex md:items-end md:col-span-1">
+        {isProjectDetail && (
           <Link href="/">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
               height="20"
               fill="currentColor"
-              className="bi bi-arrow-left"
+              className="transition-colors bi bi-arrow-left text-white/60 hover:text-white"
               viewBox="0 0 16 16"
             >
               <path
@@ -91,8 +97,8 @@ const Navbar = ({ isOpen, setIsOpen }: NavbarProps) => {
               />
             </svg>
           </Link>
-        </div>
-      )}
+        )}
+      </div>
     </nav>
   );
 };

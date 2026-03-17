@@ -126,24 +126,13 @@ const projects1 = [
 const ProjectsSection = () => {
   return (
     <section className="flex flex-col w-full">
-      <div className="flex items-center w-full pb-4 mb-6 border-b md:mb-8 border-white/10">
-        <span className="text-xs font-light tracking-widest text-white uppercase opacity-40">
-          Craft
-        </span>
-      </div>
-
-      <div className="grid items-start w-full gap-6 mx-auto md:grid-cols-2 md:gap-8">
+      <div className="grid items-start w-full max-w-container mx-auto gap-6 md:grid-cols-1 md:gap-12">
         {projects1.map((project, index) => (
-          <ProjectCard 
-            key={project.id} 
-            {...project} 
-            priority={index === 0} 
-          />
+          <ProjectCard key={project.id} {...project} priority={index === 0} />
         ))}
       </div>
     </section>
   );
 };
-
 
 export default ProjectsSection;

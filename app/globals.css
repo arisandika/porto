@@ -60,10 +60,12 @@
 .section-hero {
   z-index: 20;
   background-image: radial-gradient(circle closest-corner at 50% 0, #f2f2f226, #0000);
+  position: relative;
 }
 
 .hero-bg-gradient {
-  z-index: 30;
+  z-index: 1;
+  pointer-events: none;
   background-image: linear-gradient(to right, transparent 5%, var(--on-background) 50%, transparent 95%);
   opacity: .7;
   filter: blur(100px);
@@ -75,7 +77,8 @@
 }
 
 .hero-noise {
-  z-index: 40;
+  z-index: 2;
+  pointer-events: none;
   opacity: 0.2;
   mix-blend-mode: overlay;
   background-image: url("https://cdn.prod.website-files.com/63dcb6e1a80e9454b630f4c4/644af0299bc01254815ae442_noise-overlay-2.png");

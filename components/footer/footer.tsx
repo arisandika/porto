@@ -28,7 +28,7 @@ const FooterLink = ({
     >
       <span>{label}</span>
       {isInternal ? (
-        <span className="flex-shrink-0 flex items-center justify-center text-[10px] font-mono text-yellow-300/70 group-hover:text-yellow-300 transition-colors -mt-1">
+        <span className="flex-shrink-0 flex items-center justify-center text-xs font-mono text-yellow-300/70 group-hover:text-yellow-300 transition-colors -mt-1">
           {number?.toString().padStart(2, "0")}
         </span>
       ) : (
@@ -67,7 +67,7 @@ const Footer = () => {
               <span className="inline-flex items-center px-3 py-1 text-xs font-normal text-yellow-300 border rounded-full border-yellow-300/30">
                 v1.0.0
               </span>
-              <span className="text-xs uppercase text-white/40">
+              <span className="text-xs uppercase text-white/60">
                 Last Updated 2026-03-20
               </span>
             </div>

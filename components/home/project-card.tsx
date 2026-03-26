@@ -1,10 +1,12 @@
 "use client";
 
+import { useVideoAutoplay } from "@/app/hooks/use-video-autoplay";
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 
-interface ProjectCardProps {
+export interface ProjectCardProps {
+  id: number;
   title: string;
   category?: string;
   year: string;
@@ -19,9 +21,6 @@ interface ProjectCardProps {
 
 const ProjectCard = ({
   title,
-  category,
-  year,
-  height,
   width,
   href,
   thumbnailSrc,
@@ -31,75 +30,66 @@ const ProjectCard = ({
 }: ProjectCardProps) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const isVideo = /\.(mp4|webm|ogg)$/i.test(thumbnailSrc);
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const videoRef = useVideoAutoplay(isVideo);
 
-  useEffect(() => {
-    if (!isVideo || !videoRef.current) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            videoRef.current?.play().catch(() => {});
-          } else {
-            videoRef.current?.pause();
-          }
-        });
-      },
-      { threshold: 0.1 },
-    );
-
-    observer.observe(videoRef.current);
-    return () => observer.disconnect();
-  }, [isVideo]);
+  // Extracted shared classes to adhere to DRY Principle
+  const mediaClasses = `relative z-20 h-full w-full -translate-y-2 transform-gpu object-contain transition-all duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-4 ${
+    isLoaded ? "opacity-100" : "opacity-0"
+  }`;
 
   return (
-    <Link
-      href={href}
-      className="relative flex flex-col gap-3 group"
-    >
+    <Link href={href} className="group relative flex flex-col gap-3">
       <figure
-        className="relative overflow-hidden transform-gpu"
-        style={{
-          maxWidth: `${width}px`,
-          aspectRatio: `1/1`,
-        }}
+        className="relative aspect-square overflow-hidden transform-gpu"
+        style={{ maxWidth: `${width}px` }}
       >
+        {/* Base Background Gradient */}
         <div
-          className={`absolute inset-0 z-0 bg-gradient-to-b 
-            ${
-              isVideo
-                ? "from-[#232323] from-[1%] via-[#232323]"
-                : "from-[#262626] from-[0%] via-[#131313]"
-            } via-[#111111] via-[40%] to-[#0e0e0e]`}
+          className={`absolute inset-0 z-0 bg-gradient-to-b ${
+            isVideo
+              ? "from-[#232323] from-[80%] via-[#141414] via-[#0e0e0e] via-[80%] to-[#151515]"
+              : "from-[#232323] from-[0%] via-[#131313] via-[#151515] via-[40%] to-[#151515]"
+          }`}
         />
 
+        {/* Hover Linear Gradient Overlay */}
         {!isVideo && (
           <div
-            className="absolute inset-0 z-3 transition-opacity duration-500 opacity-100 md:opacity-0 md:group-hover:opacity-100"
+            className="pointer-events-none absolute inset-0 z-[3] opacity-100 transition-opacity duration-500 md:opacity-0 md:group-hover:opacity-100"
             style={{
-              background: `linear-gradient(to bottom, ${gradient || "transparent"}, #111 80%)`,
+              background: `linear-gradient(to bottom, ${gradient || "transparent"}, #151515 80%)`,
             }}
           />
         )}
 
+        {/* Hover Radial Gradient Overlay */}
         {!isVideo && (
           <div
-            className="absolute inset-0 z-20 transition-opacity duration-500 opacity-100 pointer-events-none md:opacity-0 md:group-hover:opacity-100"
+            className="pointer-events-none absolute inset-0 z-20 opacity-100 transition-opacity duration-500 md:opacity-0 md:group-hover:opacity-100"
             style={{
               background: `radial-gradient(circle at 50% 0, ${radial || "rgba(255, 255, 255, 0.25)"}, transparent 60%)`,
             }}
           />
         )}
 
+        {/* Static Subtle Radial Overlay (Disappears on hover) */}
+        <div
+          className="pointer-events-none absolute inset-0 z-30 opacity-100 transition-opacity duration-500 md:opacity-100 md:group-hover:opacity-0"
+          style={{
+            background: `radial-gradient(circle at 50% 0, rgba(255, 255, 255, 0.02), transparent 60%)`,
+          }}
+        />
+
+        {/* Loading State Skeleton */}
         {!isLoaded && (
-          <div className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-neutral-900 animate-pulse">
-            <span className="text-xs font-light text-white uppercase opacity-40">
+          <div className="absolute inset-0 z-10 flex items-center justify-center bg-neutral-900 animate-pulse">
+            <span className="text-xs font-light uppercase text-white/60">
               Generating Content...
             </span>
           </div>
         )}
 
+        {/* Media Render */}
         {isVideo ? (
           <video
             ref={videoRef}
@@ -109,41 +99,30 @@ const ProjectCard = ({
             playsInline
             preload="none"
             onLoadedData={() => setIsLoaded(true)}
-            className={`relative z-20 w-full h-full object-contain transform-gpu
-            transition-all duration-900 ease-[cubic-bezier(0.22,1,0.36,1)]
-            -translate-y-2 group-hover:-translate-y-4
-            ${isLoaded ? "opacity-100" : "opacity-0"}`}
+            className={mediaClasses}
           />
         ) : (
           <Image
             src={thumbnailSrc}
-            alt={title}
+            alt={title || "Project Thumbnail"}
             fill
             quality={100}
             priority={priority}
             loading={priority ? "eager" : "lazy"}
             onLoad={() => setIsLoaded(true)}
             sizes="(max-width: 896px) 100vw, 896px"
-            className={`relative z-20 object-contain transform-gpu
-            transition-all duration-900 ease-[cubic-bezier(0.22,1,0.36,1)]
-            -translate-y-2 group-hover:-translate-y-4
-            ${isLoaded ? "opacity-100" : "opacity-0"}`}
+            className={mediaClasses}
           />
         )}
       </figure>
 
-      <div className="flex items-start justify-between text-sm">
+      {/* Title Details */}
+      <div className="flex items-start justify-center gap-1 text-xs">
         <div className="flex flex-col gap-0.5">
-          <span className="font-medium text-white transition-colors duration-500 group-hover/card:text-gray-300">
+          <span className="font-normal text-white transition-colors duration-500 group-hover:text-gray-300">
             {title || "Untitled Project"}
           </span>
-          <span className="text-xs font-light text-white uppercase opacity-40">
-            {category || "Category"}
-          </span>
         </div>
-        <span className="text-xs font-light text-white uppercase opacity-40">
-          {year || 2026}
-        </span>
       </div>
     </Link>
   );

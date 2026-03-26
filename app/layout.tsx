@@ -69,19 +69,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className="scroll-smooth">
       <body
         className={`
-        ${NeueHaas.variable} 
-        ${RuderPlakat.variable} 
-        ${GeistMono.variable}
-        ${gloock.variable}
-        bg-[#0e0e0e] text-xs font-normal text-white selection:text-yellow-300 antialiased overflow-x-hidden min-h-screen font-neue
-      `}
+          ${GeistMono.variable} ${NeueHaas.variable} ${RuderPlakat.variable} ${gloock.variable}
+          min-h-screen overflow-x-hidden bg-[#0e0e0e] font-neue text-xs font-normal text-white antialiased selection:text-yellow-300
+        `}
       >
         <MainLayout>{children}</MainLayout>
       </body>

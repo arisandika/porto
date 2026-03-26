@@ -1,13 +1,13 @@
-import ProjectCard from "./project-card";
+import ProjectCard, { ProjectCardProps } from "./project-card";
 
-const projects1 = [
+const PROJECT_DATA: ProjectCardProps[] = [
   {
     id: 1,
     title: "",
     category: "",
     year: "",
     width: 1608,
-    height: 1090,
+    height: 1103,
     href: "/projects/interaerp",
     thumbnailSrc: "/assets/projects/interaerp/card.webp",
     gradient: "#014880",
@@ -19,7 +19,7 @@ const projects1 = [
     category: "",
     year: "",
     width: 1608,
-    height: 1090,
+    height: 1103,
     href: "/projects/vidaflo",
     thumbnailSrc: "/assets/projects/vidaflo/card.webp",
     gradient: "#002759",
@@ -31,7 +31,7 @@ const projects1 = [
     category: "",
     year: "",
     width: 1608,
-    height: 1090,
+    height: 1103,
     href: "/projects/smalltowntnchristmas",
     thumbnailSrc: "/assets/projects/smalltowntnchristmas/card.webp",
     gradient: "#5f131d",
@@ -43,7 +43,7 @@ const projects1 = [
     category: "",
     year: "",
     width: 1608,
-    height: 1090,
+    height: 1103,
     href: "/projects/thproofing",
     thumbnailSrc: "/assets/projects/thproofing/card.webp",
     gradient: "#005d7d",
@@ -55,7 +55,7 @@ const projects1 = [
     category: "",
     year: "",
     width: 1608,
-    height: 1090,
+    height: 1103,
     href: "/projects/taylor",
     thumbnailSrc: "/assets/projects/taylor/card.mp4",
     gradient: "",
@@ -67,7 +67,7 @@ const projects1 = [
     category: "",
     year: "",
     width: 1608,
-    height: 1090,
+    height: 1103,
     href: "/projects/toondangan",
     thumbnailSrc: "/assets/projects/toondangan/card.webp",
     gradient: "#7b3d10",
@@ -79,7 +79,7 @@ const projects1 = [
     category: "",
     year: "",
     width: 1608,
-    height: 1090,
+    height: 1103,
     href: "/projects/perthamboy",
     thumbnailSrc: "/assets/projects/perthamboy/card.webp",
     gradient: "#351d3f",
@@ -91,7 +91,7 @@ const projects1 = [
     category: "",
     year: "",
     width: 1608,
-    height: 1090,
+    height: 1103,
     href: "/projects/maconcounty",
     thumbnailSrc: "/assets/projects/maconcounty/card.webp",
     gradient: "#3D543A",
@@ -103,7 +103,7 @@ const projects1 = [
     category: "",
     year: "",
     width: 1608,
-    height: 1090,
+    height: 1103,
     href: "/projects/decatur",
     thumbnailSrc: "/assets/projects/decatur/card.webp",
     gradient: "#323323",
@@ -115,7 +115,7 @@ const projects1 = [
     category: "",
     year: "",
     width: 1608,
-    height: 1090,
+    height: 1103,
     href: "/projects/dimensional",
     thumbnailSrc: "/assets/projects/dimensional/card.webp",
     gradient: "#111a39",
@@ -123,16 +123,14 @@ const projects1 = [
   },
 ];
 
-const ProjectsSection = () => {
+export default function ProjectsSection() {
   return (
-    <section className="flex flex-col w-full mx-auto">
-      <div className="grid items-start w-full md:grid-cols-3 gap-y-6 md:gap-x-3 md:gap-y-8">
-        {projects1.map((project, index) => (
+    <section className="flex w-full flex-col">
+      <div className="grid w-full grid-cols-1 items-start gap-y-8 md:grid-cols-3 md:gap-x-3">
+        {PROJECT_DATA.map((project, index) => (
           <ProjectCard key={project.id} {...project} priority={index === 0} />
         ))}
       </div>
     </section>
   );
-};
-
-export default ProjectsSection;
+}

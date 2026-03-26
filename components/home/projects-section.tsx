@@ -57,8 +57,8 @@ const projects1 = [
     width: 1608,
     height: 1090,
     href: "/projects/taylor",
-    thumbnailSrc: "/assets/projects/taylor/card.webp",
-    gradient: "#7b3d10",
+    thumbnailSrc: "/assets/projects/taylor/card.mp4",
+    gradient: "",
     radial: "",
   },
   {
@@ -69,8 +69,8 @@ const projects1 = [
     width: 1608,
     height: 1090,
     href: "/projects/toondangan",
-    thumbnailSrc: "/assets/projects/toondangan/card.mp4",
-    gradient: "",
+    thumbnailSrc: "/assets/projects/toondangan/card.webp",
+    gradient: "#7b3d10",
     radial: "",
   },
   {
@@ -125,8 +125,8 @@ const projects1 = [
 
 const ProjectsSection = () => {
   return (
-    <section className="flex flex-col w-full">
-      <div className="grid items-start w-full max-w-container mx-auto gap-6 md:grid-cols-1 md:gap-12">
+    <section className="flex flex-col w-full mx-auto">
+      <div className="grid items-start w-full md:grid-cols-3 gap-y-6 md:gap-x-3 md:gap-y-8">
         {projects1.map((project, index) => (
           <ProjectCard key={project.id} {...project} priority={index === 0} />
         ))}

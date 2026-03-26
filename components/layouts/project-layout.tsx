@@ -82,7 +82,7 @@ const ProjectLayout = ({
 
       <section className="grid grid-cols-1 gap-6 md:gap-8 md:grid-cols-12">
         <aside className="flex flex-col gap-1 md:col-span-4 md:sticky md:top-8 h-fit">
-          <h1 className="text-lg font-medium text-white">{title}</h1>
+          <h1 className="text-lg font-normal text-white">{title}</h1>
 
           <span className="text-xs font-light text-white uppercase opacity-40">
             {category}
@@ -91,11 +91,11 @@ const ProjectLayout = ({
 
         <div className="flex flex-col gap-6 md:gap-8 md:col-span-8">
           <section className="grid grid-cols-1 gap-4 md:grid-cols-2">
-            <p className="text-sm font-light leading-relaxed text-white">
+            <p className="text-xs font-light leading-relaxed text-white">
               {desc1}
             </p>
 
-            <p className="text-sm font-light leading-relaxed text-white">
+            <p className="text-xs font-light leading-relaxed text-white">
               {desc2}
             </p>
           </section>
@@ -105,7 +105,7 @@ const ProjectLayout = ({
               <span className="text-xs font-light text-white uppercase opacity-40">
                 Role
               </span>
-              <span className="text-sm text-white">{role}</span>
+              <span className="text-xs text-white">{role}</span>
             </div>
 
             <div className="flex flex-col gap-1">
@@ -113,7 +113,7 @@ const ProjectLayout = ({
                 Collaborators
               </span>
 
-              <span className="text-sm text-white">
+              <span className="text-xs text-white">
                 {collaborators.join(", ")}
               </span>
             </div>
@@ -122,7 +122,7 @@ const ProjectLayout = ({
               <span className="text-xs font-light text-white uppercase opacity-40">
                 Duration
               </span>
-              <span className="text-sm text-white">{duration}</span>
+              <span className="text-xs text-white">{duration}</span>
             </div>
 
             <div className="flex flex-col gap-1">
@@ -130,7 +130,7 @@ const ProjectLayout = ({
                 Tools
               </span>
 
-              <span className="text-sm text-white">{tools.join(", ")}</span>
+              <span className="text-xs text-white">{tools.join(", ")}</span>
             </div>
           </section>
 

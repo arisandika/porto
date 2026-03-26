@@ -24,7 +24,7 @@ const FooterLink = ({
       href={href}
       target={external ? "_blank" : undefined}
       rel={external ? "noopener noreferrer" : undefined}
-      className={`inline-flex items-center gap-1 text-sm transition-colors duration-300 border-b border-dotted w-fit text-white/80 hover:text-yellow-300 border-white/20 hover:border-yellow-300/50 group ${className}`}
+      className={`inline-flex items-center gap-1 text-xs transition-colors duration-300 border-b border-dotted w-fit text-white/80 hover:text-yellow-300 border-white/20 hover:border-yellow-300/50 group ${className}`}
     >
       <span>{label}</span>
       {isInternal ? (
@@ -51,8 +51,6 @@ const FooterLink = ({
 };
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
-
   const socialLinks = [
     { href: "mailto:arisndk36@gmail.com", label: "Mail", external: true },
     { href: "https://linkedin.com", label: "Linkedin", external: true },
@@ -61,12 +59,12 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="sticky bottom-0 flex flex-col items-center bg-[#0d0d0d] w-full text-zinc-100">
-      <div className="w-full px-6 py-8 md:px-12 md:py-10">
+    <footer className="sticky bottom-0 flex flex-col items-center bg-[#181818] border-t border-[#f2f2f21a] w-full text-zinc-100">
+      <div className="w-full px-3 py-10 md:py-12">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-12">
           <div className="flex flex-col gap-2 md:col-span-6">
             <div className="flex items-center gap-3">
-              <span className="inline-flex items-center px-3 py-1 text-xs font-medium text-yellow-300 border rounded-full border-yellow-300/30">
+              <span className="inline-flex items-center px-3 py-1 text-xs font-normal text-yellow-300 border rounded-full border-yellow-300/30">
                 v1.0.0
               </span>
               <span className="text-xs uppercase text-white/40">
@@ -82,7 +80,7 @@ const Footer = () => {
           </div>
 
           <div className="flex flex-col gap-3 md:col-span-4">
-            <p className="text-sm text-white/80">
+            <p className="text-xs text-white/80">
               Let&apos;s build something together.
             </p>
             <FooterLink

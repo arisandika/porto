@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Geist_Mono } from "next/font/google";
+import { Geist_Mono, Gloock } from "next/font/google";
 import "./globals.css";
 import MainLayout from "@/components/layouts/main-layout";
 
@@ -43,6 +43,24 @@ const NeueHaas = localFont({
   variable: "--font-neue-haas",
 });
 
+const RuderPlakat = localFont({
+  src: [
+    {
+      path: "./fonts/RuderPlakatLLVIPTrial.ttf",
+      weight: "500",
+      style: "normal",
+    },
+  ],
+  display: "swap",
+  variable: "--font-ruder-plakat",
+});
+
+const gloock = Gloock({
+  variable: "--font-gloock",
+  weight: ["400"],
+  subsets: ["latin"],
+});
+
 export const metadata: Metadata = {
   title: "Ari Sandika – Fullstack Web Developer",
   description:
@@ -57,7 +75,13 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${NeueHaas.className} bg-[#0e0e0e] text-sm font-medium text-white selection:text-yellow-300 antialiased overflow-x-hidden min-h-screen`}
+        className={`
+        ${NeueHaas.variable} 
+        ${RuderPlakat.variable} 
+        ${GeistMono.variable}
+        ${gloock.variable}
+        bg-[#0e0e0e] text-xs font-normal text-white selection:text-yellow-300 antialiased overflow-x-hidden min-h-screen font-neue
+      `}
       >
         <MainLayout>{children}</MainLayout>
       </body>

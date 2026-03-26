@@ -66,7 +66,7 @@ const Tabs = ({
               tabRefs.current[index] = el;
             }}
             className={`
-              relative px-6 py-2 text-sm font-medium rounded-full
+              relative px-6 py-2 text-xs font-normal rounded-full
               transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]
               ${
                 isActive

@@ -18,11 +18,15 @@ const Navbar = ({ isOpen, setIsOpen }: NavbarProps) => {
       <div className="flex items-center gap-4">
         <Link
           href="/"
-          className="hidden text-sm transition-colors md:flex hover:text-yellow-300"
+          className="hidden text-xs transition-colors md:flex hover:text-yellow-300 uppercase"
         >
           Ari Sandika
         </Link>
 
+        <Link
+          href="/"
+          className="flex md:hidden"
+        >
         <Image
           src="/assets/images/logo-transparent.png"
           alt="logo"
@@ -33,23 +37,30 @@ const Navbar = ({ isOpen, setIsOpen }: NavbarProps) => {
           sizes="(max-width:768px) 100vw, (max-width:1280px) 80vw, 1200px"
           className="flex w-12 h-12 md:hidden"
         />
+        </Link>
       </div>
 
-      <div className="absolute -translate-x-1/2 left-1/2">
-        <Tabs
-          tabs={[
-            { label: "Work", href: "/" },
-            { label: "Info", href: "/about" },
-          ]}
-        />
+      <div className="absolute -translate-x-1/2 left-1/2 flex items-center gap-3">
+        <Link
+          href="/"
+          className="hidden text-xs transition-colors md:flex hover:text-yellow-300"
+        >
+          Works
+        </Link>
+        <Link
+          href="/about"
+          className="hidden text-xs transition-colors md:flex hover:text-yellow-300"
+        >
+          About
+        </Link>
       </div>
 
-      <div className="md:hidden">
+      <div className="md:hidden z-[300]">
         <button
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
           aria-expanded={isOpen}
-          className="group flex items-center justify-center relative z-10 [transition:all_0.5s_ease] cursor-pointer border w-[46px] h-[46px] rounded-full transition-all duration-500 bg-white/5 border border-[#f2f2f21a] ease-[cubic-bezier(0.22,1,0.36,1)] hover:bg-[#f2f2f214] hover:border-[#f2f2f233] shadow-[0_9px_30px_#0000001d] hover:shadow-[0_14px_40px_#0000003d] bg-[#111111]/80 backdrop-blur-lg cursor-pointer outline-none focus-visible:outline-0"
+          className="group flex items-center justify-center relative z-10 [transition:all_0.5s_ease] cursor-pointer border w-[46px] h-[46px] rounded-full transition-all duration-500 bg-white/5 border border-[#f2f2f21a] ease-[cubic-bezier(0.22,1,0.36,1)] hover:bg-[#f2f2f214] hover:border-[#f2f2f233] shadow-[0_9px_20px_#0000001d] hover:shadow-[0_14px_20px_#0000003d] bg-[#111111]/80 backdrop-blur-lg cursor-pointer outline-none focus-visible:outline-0"
         >
           <svg
             fill="currentColor"
@@ -91,7 +102,7 @@ const Navbar = ({ isOpen, setIsOpen }: NavbarProps) => {
         </button>
       </div>
 
-      <div className="items-center hidden gap-2 md:flex">
+      <div className="items-center hidden gap-3 md:flex">
         <Button href="https://linkedin.com" showExternalIcon>
           Linkedin
         </Button>

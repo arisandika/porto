@@ -5,10 +5,11 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main>
+    <main className="text-white">
       <Hero />
 
-      <div className="relative z-10">
+      <div className="relative z-[50]">
+        
         <section className="relative flex items-center justify-center h-screen pointer-events-none">
           <Image
             src="/assets/images/a.png"
@@ -33,6 +34,7 @@ export default function Home() {
 
         <AboutSection />
 
+        <div className="h-screen" />
         <div className="h-screen" />
 
         <RecentProjectsSection />

@@ -31,7 +31,7 @@ const Hero = () => {
         <div className="overlay-noise absolute inset-0 z-[2] h-auto w-full opacity-20" />
       </div>
 
-      <section className="bg-hero-radial fixed inset-0 z-[2] flex min-h-[80vh] items-center justify-center md:min-h-screen">
+      <section className="bg-hero-radial fixed inset-0 z-[2] flex items-center justify-center h-screen">
         <h1 className="relative z-10 transition-all duration-300 text-display-heading">
           {heroText}
         </h1>

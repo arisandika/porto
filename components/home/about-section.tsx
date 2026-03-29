@@ -8,7 +8,7 @@ export default function AboutSection() {
       </div>
 
       {/* Main Content */}
-      <div className="bg-about-radial relative z-20 flex min-h-screen items-center px-3 py-8 md:items-stretch md:justify-between">
+      <div className="bg-about-radial relative z-20 flex h-[70vh] md:h-screen items-center px-3 py-8 md:items-stretch md:justify-between">
         <div className="grid w-full grid-cols-1 md:grid-cols-12 gap-x-3 gap-y-8">
           <aside className="sticky top-8 flex h-fit flex-col md:col-span-4">
             <span className="text-xs font-medium text-white">01/</span>

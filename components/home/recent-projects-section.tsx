@@ -2,12 +2,7 @@ import ProjectsSection from "@/components/home/projects-section";
 
 export default function RecentProjectsSection() {
   return (
-    <section className="relative overflow-hidden bg-[#202020] text-white pt-8 pb-[180px] px-3 md:bg-[#181818]">
-      {/* Background Overlays */}
-      <div className="pointer-events-none absolute inset-0 z-0">
-        <div className="overlay-glow-linear absolute inset-0 z-1" />
-        <div className="overlay-noise absolute inset-0 z-2 opacity-20" />
-      </div>
+    <section className="relative overflow-hidden text-white pt-8 pb-[180px] px-3">
 
       {/* Main Content */}
       <div className="relative z-10">

@@ -38,7 +38,7 @@ const ProjectCard = ({
   }`;
 
   return (
-    <Link href={href} className="group relative flex flex-col gap-3">
+    <Link href={href} target="_blank" className="group relative flex flex-col gap-3">
       <figure
         className="relative aspect-square overflow-hidden transform-gpu"
         style={{ maxWidth: `${width}px` }}

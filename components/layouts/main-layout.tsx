@@ -3,6 +3,7 @@
 import { useLayout } from "@/app/hooks/use-layout";
 import Navbar from "../navbar/navbar";
 import Sidebar from "../sidebar/sidebar";
+import Footer from "../footer/footer";
 // import Footer from "../footer/footer";
 
 const MainLayout = ({ children }: { children: React.ReactNode }) => {
@@ -24,7 +25,7 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
         </main>
 
         <div className="relative">
-          {/* <Footer show={showFooter} /> */}
+          <Footer />
         </div>
       </div>
     </div>

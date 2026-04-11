@@ -18,12 +18,15 @@ const Navbar = ({ isOpen, setIsOpen }: NavbarProps) => {
   const isProjectDetail = pathname.startsWith("/projects/");
 
   // Mengambil link dari config agar tetap terpusat (Scalable Architecture)
-  const linkedinLink = siteConfig.socialLinks.find((link) => link.label === "Linkedin")?.href || "https://linkedin.com";
-  const resumeLink = siteConfig.navLinks.find((link) => link.label === "Resume")?.href || "/resume";
+  const linkedinLink =
+    siteConfig.socialLinks.find((link) => link.label === "Linkedin")?.href ||
+    "https://linkedin.com";
+  const resumeLink =
+    siteConfig.navLinks.find((link) => link.label === "Resume")?.href ||
+    "/resume";
 
   return (
     <nav className="flex items-center justify-between w-full">
-      
       <div className="flex items-center gap-4">
         <Link
           href="/"
@@ -104,7 +107,6 @@ const Navbar = ({ isOpen, setIsOpen }: NavbarProps) => {
           </Link>
         )}
       </div>
-      
     </nav>
   );
 };

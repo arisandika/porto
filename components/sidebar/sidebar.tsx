@@ -38,14 +38,13 @@ const Sidebar = ({ isOpen, setIsOpen }: SidebarProps) => {
             <div className="flex gap-2">
               <Image
                 src="/assets/images/logo-transparent.png"
-                src="/assets/images/logo-transparent.png"
                 alt="logo"
                 width={100}
                 height={100}
                 priority
                 quality={90}
                 sizes="(max-width:768px) 100vw, (max-width:1280px) 80vw, 1200px"
-                className="h-12 w-12"
+                className="w-12 h-12"
               />
             </div>
 
@@ -92,7 +91,7 @@ const Sidebar = ({ isOpen, setIsOpen }: SidebarProps) => {
 
           <div className="flex flex-col gap-2 py-6">
             <nav className="flex flex-col gap-3">
-              <span className="text-[11px] font-light uppercase tracking-wider text-white/60">
+              <span className="text-xs font-light tracking-wider text-white uppercase opacity-40">
                 Let&apos;s build something together.
               </span>
               <Link
@@ -126,4 +125,3 @@ const Sidebar = ({ isOpen, setIsOpen }: SidebarProps) => {
 };
 
 export default Sidebar;
-

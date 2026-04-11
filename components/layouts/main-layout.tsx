@@ -4,13 +4,11 @@ import { useEffect, useState, useCallback } from "react";
 import Navbar from "../navbar/navbar";
 import Sidebar from "../sidebar/sidebar";
 import Footer from "../footer/footer";
-// import Footer from "../footer/footer";
 
 const MainLayout = ({ children }: { children: React.ReactNode }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [showFooter, setShowFooter] = useState(false); // Bisa dipakai jika ingin memunculkan footer kondisional nanti
+  const [showFooter, setShowFooter] = useState(false);
 
-  // PERFORMANCE OPTIMIZATION: Mencegah scroll jank
   const handleScroll = useCallback(() => {
     window.requestAnimationFrame(() => {
       const scrollTop = window.scrollY;
@@ -26,7 +24,7 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
       if (window.innerWidth < 768) setIsMobileMenuOpen(false);
     };
 
-    window.addEventListener("resize", handleResize, { passive: true }); // passive: true bagus untuk scroll perf
+    window.addEventListener("resize", handleResize, { passive: true });
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
 
@@ -37,7 +35,6 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
   }, [handleScroll]);
 
   return (
-    // ... HTML Return SAMA PERSIS dengan kode Anda (tidak ada class yang diubah)
     <div className="relative flex justify-center w-full min-h-screen overflow-x-hidden">
       <div className="absolute inset-0 z-0 h-screen overflow-hidden pointer-events-none">
         <div className="hero-bg-gradient" />

@@ -4,7 +4,7 @@ import CustomLink from "@/components/ui/custom-link";
 const Footer = () => {
   return (
     <footer className="sticky bottom-0 flex flex-col items-center bg-[#181818] border-t border-[#f2f2f21a] w-full text-zinc-100">
-      <div className="w-full px-3 py-10 md:px-12 md:py-12">
+      <div className="w-full px-4 py-10 md:px-12 md:py-12">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-12">
           {/* Version Info */}
           <div className="flex flex-col gap-2 md:col-span-6">
@@ -13,7 +13,7 @@ const Footer = () => {
                 v1.0.0
               </span>
               <span className="text-xs uppercase text-white/40">
-                Last Updated 2026-03-20
+                Last Updated 2026-04-12
               </span>
             </div>
           </div>

@@ -48,7 +48,7 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
           </div>
         </div>
         <main className="relative z-20 flex justify-center flex-1 w-full section-hero">
-          <div className="relative z-30 w-full px-3 md:px-12 mb-30 md:mb-40">
+          <div className="relative z-30 w-full px-4 md:px-12 mb-30 md:mb-40">
             <div className="w-full">{children}</div>
           </div>
         </main>

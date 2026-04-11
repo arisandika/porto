@@ -51,7 +51,8 @@ const ProjectCard = ({
     <article className="md:p-4">
       <Link
         href={href}
-        className="relative flex flex-col gap-3 md:gap-4 group p-2 rounded-[24px] outline outline-1 outline-[#f2f2f226] shadow-[inset_0_0_8px_#0004,0_0_40px_#0002,0_20px_80px_#0008] bg-[radial-gradient(circle_farthest-side_at_50%_0,#f2f2f210,transparent)]"
+        target="_blank"
+        className="relative flex flex-col gap-3 md:gap-4 group p-2 rounded-[24px] outline outline-1 outline-[#f2f2f226] bg-[radial-gradient(circle_farthest-side_at_50%_0,#f2f2f210,transparent)]"
       >
         <figure
           className="relative overflow-hidden transform-gpu rounded-[16px] ring-[1px] ring-[#f2f2f220] group-hover:ring-[#838383] transition-all duration-500 shadow-[inset_0_0_10px_#0000001a,0_0_12px_#0004] aspect-square md:[aspect-ratio:var(--card-ratio)]"
@@ -70,7 +71,7 @@ const ProjectCard = ({
             <div
               className="pointer-events-none absolute inset-0 z-[3] opacity-100 transition-opacity duration-500 md:opacity-0 md:group-hover:opacity-100"
               style={{
-                background: `linear-gradient(to bottom, ${gradient || "transparent"}, #151515 97%)`,
+                background: `linear-gradient(to bottom, ${gradient || "transparent"}, #151515 98%)`,
               }}
             />
           )}

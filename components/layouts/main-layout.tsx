@@ -4,6 +4,7 @@ import { useEffect, useState, useCallback } from "react";
 import Navbar from "../navbar/navbar";
 import Sidebar from "../sidebar/sidebar";
 import Footer from "../footer/footer";
+// import Footer from "../footer/footer";
 
 const MainLayout = ({ children }: { children: React.ReactNode }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

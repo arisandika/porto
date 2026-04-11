@@ -31,6 +31,9 @@ const Button = ({
         width={16}
         height={16}
         className="relative z-10 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+        width={16}
+        height={16}
+        className="relative z-10 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
         loading="lazy"
       />
     )}

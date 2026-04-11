@@ -1,10 +1,12 @@
 "use client";
 
+import { useVideoAutoplay } from "@/app/hooks/use-video-autoplay";
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 
-interface ProjectCardProps {
+export interface ProjectCardProps {
+  id: number;
   title: string;
   category?: string;
   year: string;
@@ -19,9 +21,6 @@ interface ProjectCardProps {
 
 const ProjectCard = ({
   title,
-  category,
-  year,
-  height,
   width,
   href,
   thumbnailSrc,
@@ -31,27 +30,12 @@ const ProjectCard = ({
 }: ProjectCardProps) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const isVideo = /\.(mp4|webm|ogg)$/i.test(thumbnailSrc);
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const videoRef = useVideoAutoplay(isVideo);
 
-  useEffect(() => {
-    if (!isVideo || !videoRef.current) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            videoRef.current?.play().catch(() => {});
-          } else {
-            videoRef.current?.pause();
-          }
-        });
-      },
-      { threshold: 0.1 },
-    );
-
-    observer.observe(videoRef.current);
-    return () => observer.disconnect();
-  }, [isVideo]);
+  // Extracted shared classes to adhere to DRY Principle
+  const mediaClasses = `relative z-20 h-full w-full -translate-y-2 transform-gpu object-contain transition-all duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-4 ${
+    isLoaded ? "opacity-100" : "opacity-0"
+  }`;
 
   return (
     <div className="md:p-4">

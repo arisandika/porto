@@ -1,7 +1,7 @@
 import { projectsData } from "@/app/data/projects";
 import ProjectCard from "./project-card";
 
-const ProjectsSection = () => {
+export default function ProjectsSection() {
   return (
     <section className="flex flex-col w-full mx-auto max-w-container -mt-24 md:-mt-20">
       <div className="grid items-start w-full gap-15 md:grid-cols-1 md:gap-12">
@@ -11,6 +11,4 @@ const ProjectsSection = () => {
       </div>
     </section>
   );
-};
-
-export default ProjectsSection;
+}

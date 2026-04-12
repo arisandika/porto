@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ContactForm from "@/components/contact/contact-form";
+import TransitionLink from "@/components/common/transition-link";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -45,33 +46,73 @@ export default function ContactPage() {
                         <h3 className="text-sm text-white/50 mb-2 tracking-widest">
                           Contact Details
                         </h3>
-                        <a
+                        <TransitionLink
                           href="mailto:arisndk36@gmail.com"
-                          className="text-sm text-white/80 hover:text-yellow-300 transition-colors block"
+                          target="_blank"
+                          className={`inline-flex items-center gap-1 text-sm transition-colors duration-300 border-b border-dotted w-fit text-white/80 hover:text-yellow-300 border-white/20 hover:border-yellow-300/50 group`}
                         >
-                          arisndk36@gmail.com
-                        </a>
+                          <span>arisndk36@gmail.com</span>
+                          <svg
+                            className="w-3 h-3 text-yellow-300 flex-shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M7 17L17 7M17 7H7M17 7V17"
+                            />
+                          </svg>
+                        </TransitionLink>
                       </div>
                       <div>
                         <h3 className="text-sm text-white/50 mb-2 tracking-widest">
                           Find me on
                         </h3>
-                        <a
-                          href="https://linkedin.com/in/ari-sandika"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-sm text-white/80 hover:text-yellow-300 transition-colors block"
-                        >
-                          LinkedIn
-                        </a>
-                        <a
-                          href="https://github.com/arisandika"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-sm text-white/80 hover:text-yellow-300 transition-colors block mt-1"
-                        >
-                          GitHub
-                        </a>
+                        <div className="flex gap-4">
+                          <TransitionLink
+                            href="https://linkedin.com/in/ari-sandika"
+                            target="_blank"
+                            className={`inline-flex items-center gap-1 text-sm transition-colors duration-300 border-b border-dotted w-fit text-white/80 hover:text-yellow-300 border-white/20 hover:border-yellow-300/50 group`}
+                          >
+                            <span>LinkedIn</span>
+                            <svg
+                              className="w-3 h-3 text-yellow-300 flex-shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M7 17L17 7M17 7H7M17 7V17"
+                              />
+                            </svg>
+                          </TransitionLink>
+                          <TransitionLink
+                            href="https://github.com/arisandika"
+                            target="_blank"
+                            className={`inline-flex items-center gap-1 text-sm transition-colors duration-300 border-b border-dotted w-fit text-white/80 hover:text-yellow-300 border-white/20 hover:border-yellow-300/50 group`}
+                          >
+                            <span>Github</span>
+                            <svg
+                              className="w-3 h-3 text-yellow-300 flex-shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M7 17L17 7M17 7H7M17 7V17"
+                              />
+                            </svg>
+                          </TransitionLink>
+                        </div>
                       </div>
                     </div>
                   </div>

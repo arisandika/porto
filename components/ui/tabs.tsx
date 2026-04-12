@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState, useRef } from "react";
+import TransitionLink from "../common/transition-link";
 
 interface Tab {
   label: string;
@@ -59,7 +60,7 @@ const Tabs = ({
           (tab.href !== "/" && pathname.startsWith(tab.href));
 
         return (
-          <Link
+          <TransitionLink
             key={tab.label}
             href={tab.href}
             ref={(el) => {
@@ -76,7 +77,7 @@ const Tabs = ({
             `}
           >
             {tab.label}
-          </Link>
+          </TransitionLink>
         );
       })}
     </div>

@@ -4,6 +4,7 @@ import { Geist_Mono, Gloock } from "next/font/google";
 import "./globals.css";
 import MainLayout from "@/components/layouts/main-layout";
 import { siteConfig } from "./config/site";
+import { LoadingProvider } from "./context/loading-context";
 
 const GeistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -111,7 +112,9 @@ export default function RootLayout({
       <body
         className={`${NeueHaas.variable} ${RuderPlakat.variable} ${GeistMono.variable} ${gloock.variable} overflow-x-hidden bg-[#0e0e0e] font-neue text-xs font-normal text-white antialiased selection:text-yellow-300`}
       >
-        <MainLayout>{children}</MainLayout>
+        <LoadingProvider>
+          <MainLayout>{children}</MainLayout>
+        </LoadingProvider>
       </body>
     </html>
   );

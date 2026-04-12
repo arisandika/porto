@@ -4,7 +4,6 @@ import { useFormState, useFormStatus } from "react-dom";
 import { useEffect, useRef } from "react";
 import { sendEmailAction, FormState } from "@/app/contact/actions";
 
-// Tombol Submit dengan status "pending" dari useFormStatus
 function SubmitButton() {
   const { pending } = useFormStatus();
   return (
@@ -31,13 +30,11 @@ function SubmitButton() {
   );
 }
 
-// Komponen utama form
 export default function ContactForm() {
   const initialState: FormState = { status: "idle", message: "" };
   const [state, formAction] = useFormState(sendEmailAction, initialState);
   const formRef = useRef<HTMLFormElement>(null);
 
-  // Reset form setelah berhasil
   useEffect(() => {
     if (state.status === "success") {
       formRef.current?.reset();
@@ -50,12 +47,8 @@ export default function ContactForm() {
 
   return (
     <form ref={formRef} action={formAction} className="flex flex-col gap-6">
-      {/* Name Input */}
       <div>
-        <label
-          htmlFor="name"
-          className="text-sm text-white/50 mb-2 block"
-        >
+        <label htmlFor="name" className="text-sm text-white/50 mb-2 block">
           Full Name
         </label>
         <input
@@ -70,12 +63,8 @@ export default function ContactForm() {
         )}
       </div>
 
-      {/* Email Input */}
       <div>
-        <label
-          htmlFor="email"
-          className="text-sm text-white/50 mb-2 block"
-        >
+        <label htmlFor="email" className="text-sm text-white/50 mb-2 block">
           Email Address
         </label>
         <input
@@ -90,12 +79,8 @@ export default function ContactForm() {
         )}
       </div>
 
-      {/* Subject Input */}
       <div>
-        <label
-          htmlFor="subject"
-          className="text-sm text-white/50 mb-2 block"
-        >
+        <label htmlFor="subject" className="text-sm text-white/50 mb-2 block">
           Subject
         </label>
         <input
@@ -110,12 +95,8 @@ export default function ContactForm() {
         )}
       </div>
 
-      {/* Message Textarea */}
       <div>
-        <label
-          htmlFor="message"
-          className="text-sm text-white/50 mb-2 block"
-        >
+        <label htmlFor="message" className="text-sm text-white/50 mb-2 block">
           Your Message
         </label>
         <textarea
@@ -130,7 +111,6 @@ export default function ContactForm() {
         )}
       </div>
 
-      {/* Tombol & Pesan Status */}
       <div className="pt-2">
         <SubmitButton />
 

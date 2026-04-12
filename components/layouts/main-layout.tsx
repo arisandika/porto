@@ -4,10 +4,15 @@ import { useEffect, useState, useCallback } from "react";
 import Navbar from "../navbar/navbar";
 import Sidebar from "../sidebar/sidebar";
 import Footer from "../footer/footer";
+import PageLoader from "./page-loader";
+import { useLoading } from "@/app/context/loading-context";
+import { usePathname } from "next/navigation";
 
 const MainLayout = ({ children }: { children: React.ReactNode }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showFooter, setShowFooter] = useState(false);
+  const { isLoading, stopLoading } = useLoading();
+  const pathname = usePathname();
 
   const handleScroll = useCallback(() => {
     window.requestAnimationFrame(() => {
@@ -34,6 +39,23 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
     };
   }, [handleScroll]);
 
+  useEffect(() => {
+    // Hentikan loading saat halaman baru selesai dimuat
+    stopLoading();
+  }, [pathname, stopLoading]);
+
+  useEffect(() => {
+    if (isLoading) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    // Cleanup function untuk memastikan scroll kembali normal
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isLoading]);
+
   return (
     <div className="relative flex justify-center w-full min-h-screen overflow-x-hidden">
       <div className="absolute inset-0 z-0 h-screen overflow-hidden pointer-events-none">
@@ -47,11 +69,15 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
             <Navbar isOpen={isMobileMenuOpen} setIsOpen={setIsMobileMenuOpen} />
           </div>
         </div>
-        <main className="relative z-20 flex justify-center flex-1 w-full section-hero">
-          <div className="relative z-30 w-full px-4 md:px-12 mb-30 md:mb-40">
-            <div className="w-full">{children}</div>
-          </div>
-        </main>
+        <div className="relative">
+          {isLoading && <PageLoader />}
+
+          <main className="relative z-20 flex justify-center flex-1 w-full section-hero">
+            <div className="relative z-30 w-full px-4 md:px-12 mb-30 md:mb-40">
+              <div className="w-full">{children}</div>
+            </div>
+          </main>
+        </div>
         <div className="relative z-20">
           <Footer />
         </div>

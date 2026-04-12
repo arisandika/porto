@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import CustomLink from "@/components/ui/custom-link";
 import { siteConfig } from "@/app/config/site";
+import TransitionLink from "../common/transition-link";
 
 interface SidebarProps {
   isOpen: boolean;
@@ -37,7 +38,7 @@ const Sidebar = ({ isOpen, setIsOpen }: SidebarProps) => {
           <div className="flex flex-col gap-4 pb-6 border-b pt-7 border-[#f2f2f21a]">
             <div className="flex gap-2">
               <Image
-                src="/assets/images/logo-transparent.png"
+                src="/assets/images/a.png"
                 alt="logo"
                 width={100}
                 height={100}
@@ -94,7 +95,7 @@ const Sidebar = ({ isOpen, setIsOpen }: SidebarProps) => {
               <span className="text-xs font-light tracking-wider text-white uppercase opacity-40">
                 Let&apos;s build something together.
               </span>
-              <Link
+              <TransitionLink
                 href={`mailto:${siteConfig.email}`}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -115,7 +116,7 @@ const Sidebar = ({ isOpen, setIsOpen }: SidebarProps) => {
                   />
                 </svg>
                 <span>{siteConfig.email}</span>
-              </Link>
+              </TransitionLink>
             </nav>
           </div>
         </div>

@@ -4,6 +4,7 @@ import { Project } from "@/app/data/projects";
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
+import TransitionLink from "../common/transition-link";
 
 interface ProjectCardProps extends Omit<Project, "id"> {
   priority?: boolean;
@@ -47,7 +48,7 @@ const ProjectCard = ({
 
   return (
     <article className="md:p-4">
-      <Link
+      <TransitionLink
         href={href}
         target="_blank"
         className="relative flex flex-col gap-3 md:gap-4 group p-2 rounded-[24px] outline outline-1 outline-[#f2f2f226] bg-[radial-gradient(circle_farthest-side_at_50%_0,#f2f2f210,transparent)]"
@@ -127,7 +128,7 @@ const ProjectCard = ({
 
           <div className="glare-item-top inner-edge z-50"></div>
         </figure>
-      </Link>
+      </TransitionLink>
 
       <div className="flex items-start justify-center gap-1 mt-3 text-sm">
         <div className="flex flex-col gap-0.5">

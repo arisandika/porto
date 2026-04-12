@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import TransitionLink from "../common/transition-link";
 
 interface CustomLinkProps {
   href: string;
@@ -21,7 +22,7 @@ export default function CustomLink({
 }: CustomLinkProps) {
   const isInternal = !external;
   return (
-    <Link
+    <TransitionLink
       href={href}
       target={external ? "_blank" : undefined}
       rel={external ? "noopener noreferrer" : undefined}
@@ -48,6 +49,6 @@ export default function CustomLink({
           />
         </svg>
       )}
-    </Link>
+    </TransitionLink>
   );
 }

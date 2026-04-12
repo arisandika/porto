@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import TransitionLink from "../common/transition-link";
 
 interface ButtonProps {
   href?: string;
@@ -50,14 +51,14 @@ const Button = ({
 
   if (href) {
     return (
-      <Link
+      <TransitionLink
         href={href}
         target={showExternalIcon ? "_blank" : undefined}
         rel={showExternalIcon ? "noopener noreferrer" : undefined}
         className={baseClasses}
       >
         {content}
-      </Link>
+      </TransitionLink>
     );
   }
 

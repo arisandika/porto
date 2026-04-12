@@ -7,6 +7,7 @@ import Button from "@/components/ui/button";
 import Image from "next/image";
 import HamburgerIcon from "@/components/ui/hamburger-icon";
 import { siteConfig } from "@/app/config/site";
+import TransitionLink from "../common/transition-link";
 
 interface NavbarProps {
   isOpen: boolean;
@@ -28,7 +29,7 @@ const Navbar = ({ isOpen, setIsOpen }: NavbarProps) => {
   return (
     <nav className="flex items-center justify-between w-full">
       <div className="flex items-center gap-4">
-        <Link
+        <TransitionLink
           href="/"
           className="hidden text-sm transition-colors md:flex hover:text-yellow-300"
         >
@@ -36,11 +37,11 @@ const Navbar = ({ isOpen, setIsOpen }: NavbarProps) => {
             <p>{siteConfig.name}</p>
             <p className="text-[13px] text-[#f2f2f280]">{siteConfig.role}</p>
           </div>
-        </Link>
+        </TransitionLink>
 
-        <Link href="/" className="flex md:hidden">
+        <TransitionLink href="/" className="flex md:hidden">
           <Image
-            src="/assets/images/logo-transparent.png"
+            src="/assets/images/a.png"
             alt="logo"
             width={100}
             height={100}
@@ -49,7 +50,7 @@ const Navbar = ({ isOpen, setIsOpen }: NavbarProps) => {
             sizes="(max-width:768px) 100vw, (max-width:1280px) 80vw, 1200px"
             className="flex w-12 h-12 md:hidden"
           />
-        </Link>
+        </TransitionLink>
       </div>
 
       <div className="absolute -translate-x-1/2 left-1/2 flex items-center gap-2">
@@ -90,7 +91,7 @@ const Navbar = ({ isOpen, setIsOpen }: NavbarProps) => {
         </Button>
 
         {isProjectDetail && (
-          <Link href="/">
+          <TransitionLink href="/">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
@@ -104,7 +105,7 @@ const Navbar = ({ isOpen, setIsOpen }: NavbarProps) => {
                 d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"
               />
             </svg>
-          </Link>
+          </TransitionLink>
         )}
       </div>
     </nav>

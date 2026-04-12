@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { siteConfig } from "../config/site";
+import TransitionLink from "@/components/common/transition-link";
 
 export const metadata: Metadata = {
   title: "About",
@@ -141,28 +142,66 @@ export default function AboutPage() {
                 <p className="text-sm text-yellow-300">Ari Sandika</p>
                 <p className="text-sm text-white/50">Tangerang, Banten, ID</p>
                 <div className="flex gap-4 mt-3 text-sm text-white/70">
-                  <a
+                  <TransitionLink
                     href="mailto:arisndk36@gmail.com"
-                    className="hover:text-yellow-300 transition-colors"
+                    target="_blank"
+                    className={`inline-flex items-center gap-1 text-sm transition-colors duration-300 border-b border-dotted w-fit text-white/80 hover:text-yellow-300 border-white/20 hover:border-yellow-300/50 group`}
                   >
-                    Mail
-                  </a>
-                  <a
+                    <span>Email</span>
+                    <svg
+                      className="w-3 h-3 text-yellow-300 flex-shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M7 17L17 7M17 7H7M17 7V17"
+                      />
+                    </svg>
+                  </TransitionLink>
+                  <TransitionLink
                     href="https://linkedin.com/in/ari-sandika"
                     target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-yellow-300 transition-colors"
+                    className={`inline-flex items-center gap-1 text-sm transition-colors duration-300 border-b border-dotted w-fit text-white/80 hover:text-yellow-300 border-white/20 hover:border-yellow-300/50 group`}
                   >
-                    LinkedIn
-                  </a>
-                  <a
+                    <span>LinkedIn</span>
+                    <svg
+                      className="w-3 h-3 text-yellow-300 flex-shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M7 17L17 7M17 7H7M17 7V17"
+                      />
+                    </svg>
+                  </TransitionLink>
+                  <TransitionLink
                     href="https://github.com/arisandika"
                     target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-yellow-300 transition-colors"
+                    className={`inline-flex items-center gap-1 text-sm transition-colors duration-300 border-b border-dotted w-fit text-white/80 hover:text-yellow-300 border-white/20 hover:border-yellow-300/50 group`}
                   >
-                    GitHub
-                  </a>
+                    <span>Github</span>
+                    <svg
+                      className="w-3 h-3 text-yellow-300 flex-shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M7 17L17 7M17 7H7M17 7V17"
+                      />
+                    </svg>
+                  </TransitionLink>
                 </div>
               </div>
 

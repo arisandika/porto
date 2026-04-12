@@ -19,7 +19,7 @@ export const projectsData: Project[] = [
     year: "2026",
     width: 1608,
     height: 1103,
-    href: "https://erp.arihub.my.id/attendance",
+    href: "https://erp.arihub.my.id/",
     thumbnailSrc: "/assets/projects/interaerp/card.webp",
     gradient: "#014880",
     radial: "",

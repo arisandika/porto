@@ -66,7 +66,7 @@
 }
 
 .hero-bg-gradient {
-  z-index: 1;
+  z-index: 100;
   pointer-events: none;
   background-image: linear-gradient(to right, transparent 5%, var(--on-background) 50%, transparent 95%);
   opacity: .7;
@@ -76,6 +76,14 @@
   display: none;
   position: absolute;
   inset: 96px 24px auto;
+}
+
+@media screen and (max-width: 768px) {
+  .section-hero {
+    background-image: radial-gradient(circle at 50% 0,
+        #f2f2f226 0%,
+        transparent 24%);
+  }
 }
 
 .hero-noise {
@@ -152,17 +160,21 @@
 }
 
 .glare-item-top {
-  background-image: linear-gradient(to right, #0000 10%, #ffffffcb 50%, #0000 90%);
-  height: 1px;
-  margin-bottom: -1px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 0.7px;
+  pointer-events: none;
+  z-index: 100;
 }
 
 .glare-item-top.outer-edge {
-  opacity: 1;
-  z-index: 1;
-  background-image: linear-gradient(to right, #0000 5%, #fffc 35%, #ffffffcb 50%, #fffc 65%, #0000 95%);
-  position: absolute;
-  inset: 0% 0% auto;
+  background-image: linear-gradient(to right, #0000 5%, #fffc 35%, #fff 50%, #fffc 65%, #0000 95%);
+}
+
+.glare-item-top.inner-edge {
+  background-image: linear-gradient(to right, #0000 20%, #fff 50%, #0000 80%);
 }
 
 .window-main {
@@ -303,7 +315,7 @@
 
 .text-hero-title {
   font-family: var(--font-neue-haas);
-  font-size: 36px;
+  font-size: 35px;
   font-weight: 500;
   line-height: 100%;
   letter-spacing: -1.5px;
@@ -450,4 +462,21 @@
   font-size: 11px;
   font-weight: 500;
   line-height: 19px;
+}
+
+@keyframes smooth-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: translateY(-8px);
+    opacity: 1;
+  }
+}
+
+.loading-dot {
+  animation: smooth-bounce 1s ease-in-out infinite;
 }

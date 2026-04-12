@@ -34,7 +34,7 @@ const Navbar = ({ isOpen, setIsOpen }: NavbarProps) => {
         >
           <div className="flex flex-col gap-0.5">
             <p>{siteConfig.name}</p>
-            <p className="text-[12px] text-[#f2f2f280]">{siteConfig.role}</p>
+            <p className="text-[13px] text-[#f2f2f280]">{siteConfig.role}</p>
           </div>
         </Link>
 

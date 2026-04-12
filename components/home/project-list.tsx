@@ -28,7 +28,6 @@ export default function ProjectList({ projects }: ProjectListProps) {
   return (
     <div className="relative flex flex-col w-full">
       <div className="grid items-start w-full gap-15 md:grid-cols-1 md:gap-12">
-        {/* Fungsi slice akan otomatis berhenti jika sudah mencapai batas maksimal array */}
         {projects.slice(0, visibleCount).map((project, index) => (
           <ProjectCard key={project.id} {...project} priority={index === 0} />
         ))}
@@ -38,12 +37,11 @@ export default function ProjectList({ projects }: ProjectListProps) {
         <div className="mt-16">
           <div className="flex justify-center w-full pointer-events-auto">
             {isLoading ? (
-              // Animasi 5 Titik Loader
-              <div className="flex items-center justify-center h-[44px] gap-1.5">
+              <div className="flex items-center justify-center h-[44px] gap-2">
                 {[0, 1, 2, 3, 4].map((i) => (
                   <div
                     key={i}
-                    className="w-1.5 h-1.5 bg-white/80 rounded-full animate-bounce"
+                    className="w-1.5 h-1.5 bg-white/80 rounded-full loading-dot"
                     style={{ animationDelay: `${i * 150}ms` }}
                   />
                 ))}

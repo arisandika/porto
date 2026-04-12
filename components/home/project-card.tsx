@@ -11,7 +11,7 @@ interface ProjectCardProps extends Omit<Project, "id"> {
 
 const ProjectCard = ({
   title,
-  category, // (Anda bisa tampilkan category nanti jika mau)
+  category,
   year,
   height,
   width,
@@ -25,7 +25,6 @@ const ProjectCard = ({
   const isVideo = /\.(mp4|webm|ogg)$/i.test(thumbnailSrc);
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  // Clean Code: Guard clause sudah benar di sini
   useEffect(() => {
     if (!isVideo || !videoRef.current) return;
 
@@ -47,15 +46,16 @@ const ProjectCard = ({
   }, [isVideo]);
 
   return (
-    // SEO: Ubah div menjadi <article> untuk semantic HTML
     <article className="md:p-4">
       <Link
         href={href}
         target="_blank"
         className="relative flex flex-col gap-3 md:gap-4 group p-2 rounded-[24px] outline outline-1 outline-[#f2f2f226] bg-[radial-gradient(circle_farthest-side_at_50%_0,#f2f2f210,transparent)]"
       >
+        <div className="glare-item-top outer-edge rounded-t-[24px] z-50"></div>
+
         <figure
-          className="relative overflow-hidden transform-gpu rounded-[16px] ring-[1px] ring-[#f2f2f220] group-hover:ring-[#838383] transition-all duration-500 shadow-[inset_0_0_10px_#0000001a,0_0_12px_#0004] aspect-square md:[aspect-ratio:var(--card-ratio)]"
+          className="relative overflow-hidden transform-gpu rounded-[16px] ring-[1px] ring-[#3d3d3d] group-hover:ring-[#838383] transition-all duration-500 shadow-[inset_0_0_10px_#0000001a,0_0_12px_#0004] aspect-square md:[aspect-ratio:var(--card-ratio)]"
           style={
             {
               "--card-ratio": `${width} / ${height}`,
@@ -124,6 +124,8 @@ const ProjectCard = ({
               className={`z-20 transform-gpu object-contain md:object-cover transition-all duration-900 ease-[cubic-bezier(0.22,1,0.36,1)] -translate-y-3 md:translate-y-8 md:group-hover:translate-y-0 ${isLoaded ? "opacity-100" : "opacity-0"}`}
             />
           )}
+
+          <div className="glare-item-top inner-edge z-50"></div>
         </figure>
       </Link>
 

@@ -203,7 +203,7 @@ export default function AboutPage() {
                   {items.map((skill) => (
                     <span
                       key={skill}
-                      className="inline-flex items-center px-3 py-1.5 text-[13px] text-white/60 bg-white/5 border border-white/10 rounded-md hover:bg-white/10 hover:text-white transition-colors cursor-default"
+                      className="inline-flex items-center px-3 py-1.5 text-[12px] text-white/60 bg-white/5 border border-white/10 rounded-md hover:bg-white/10 hover:text-white transition-colors cursor-default"
                     >
                       {skill}
                     </span>

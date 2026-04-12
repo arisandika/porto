@@ -11,7 +11,7 @@ import { usePathname } from "next/navigation";
 const MainLayout = ({ children }: { children: React.ReactNode }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showFooter, setShowFooter] = useState(false);
-  const { isLoading, stopLoading } = useLoading();
+  const { isLoading, startLoading, stopLoading } = useLoading();
   const pathname = usePathname();
 
   const handleScroll = useCallback(() => {
@@ -40,7 +40,11 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
   }, [handleScroll]);
 
   useEffect(() => {
-    // Hentikan loading saat halaman baru selesai dimuat
+    startLoading();
+    stopLoading();
+  }, []);
+
+  useEffect(() => {
     stopLoading();
   }, [pathname, stopLoading]);
 
@@ -50,7 +54,6 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
     } else {
       document.body.style.overflow = "";
     }
-    // Cleanup function untuk memastikan scroll kembali normal
     return () => {
       document.body.style.overflow = "";
     };

@@ -30,7 +30,7 @@ export const LoadingProvider = ({ children }: { children: ReactNode }) => {
   const stopLoading = useCallback(() => {
     if (loadingStartTime.current) {
       const elapsedTime = Date.now() - loadingStartTime.current;
-      const minDuration = 2000;
+      const minDuration = 1500;
       const remainingTime = minDuration - elapsedTime;
 
       if (remainingTime > 0) {

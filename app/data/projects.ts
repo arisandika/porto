@@ -50,6 +50,18 @@ export const projectsData: Project[] = [
   },
   {
     id: 4,
+    title: "SAINTECH - Portfolio E-Commerce",
+    category: "E-Commere Platform",
+    year: "2023",
+    width: 1608,
+    height: 1103,
+    href: "https://shop.arihub.my.id/",
+    thumbnailSrc: "/assets/projects/saintech/card.webp",
+    gradient: "#3d3d3b",
+    radial: "#454037",
+  },
+  {
+    id: 5,
     title: "THP Roofing of Knoxville",
     category: "Local Business Website",
     year: "2025",
@@ -61,7 +73,7 @@ export const projectsData: Project[] = [
     radial: "#014880",
   },
   {
-    id: 5,
+    id: 6,
     title: "Taylor & Travis Animated Wedding Invitation",
     category: "Digital Wedding Invitation",
     year: "2026",
@@ -73,7 +85,7 @@ export const projectsData: Project[] = [
     radial: "",
   },
   {
-    id: 6,
+    id: 7,
     title: "Toondangan",
     category: "Media Creative",
     year: "2026",
@@ -85,7 +97,7 @@ export const projectsData: Project[] = [
     radial: "",
   },
   {
-    id: 7,
+    id: 8,
     title: "Visit Perth Amboy Tourism Website",
     category: "Tourism & Destination Website",
     year: "2025",
@@ -97,7 +109,7 @@ export const projectsData: Project[] = [
     radial: "#41348c",
   },
   {
-    id: 8,
+    id: 9,
     title: "Visit Macon County Tourism Website",
     category: "Tourism & Destination Website",
     year: "2025",
@@ -109,7 +121,7 @@ export const projectsData: Project[] = [
     radial: "#26371660",
   },
   {
-    id: 9,
+    id: 10,
     title: "Visit Decatur County Tourism Website",
     category: "Tourism & Destination Website",
     year: "2025",
@@ -121,7 +133,7 @@ export const projectsData: Project[] = [
     radial: "#31331c",
   },
   {
-    id: 10,
+    id: 11,
     title: "Dimensional Search Franchise",
     category: "Corporate Website",
     year: "2026",

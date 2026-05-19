@@ -5,85 +5,89 @@ import TransitionLink from "@/components/common/transition-link";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Learn more about Ari Sandika, a Fullstack Web Developer with expertise in Laravel, Next.js, and scalable business systems.",
+    "Learn more about Ari Sandika, a Fullstack Web Developer with expertise in Laravel, WordPress, React, Next.js, and scalable business systems.",
 };
 
 const skills = {
-  Programming: ["PHP", "JavaScript", "TypeScript"],
-  Frameworks: [
+  Languages: ["PHP", "JavaScript", "TypeScript"],
+  "Frameworks & Libraries": [
     "Laravel",
-    "WordPress",
     "CodeIgniter",
+    "WordPress",
     "React.js",
     "Next.js",
     "Express.js",
-    "Livewire",
     "jQuery",
     "Tailwind CSS",
   ],
-  Backend: ["REST API", "Auth & Authorization", "RBAC", "MVC Architecture"],
-  Database: ["MySQL", "PostgreSQL", "Database Design (ERD)"],
-  Tools: [
+  Backend: ["REST API Development", "Authentication & Authorization", "RBAC", "MVC Architecture"],
+  "Database & Infrastructure": [
+    "MySQL",
+    "PostgreSQL",
+    "Redis",
+    "ERD Design",
+    "VPS Management",
+    "Cloudflare",
+    "SSL/SSH",
+  ],
+  "Tools & Workflow": [
     "Git",
     "GitHub Actions",
     "CI/CD",
-    "Redis",
-    "VPS",
-    "Nginx",
-    "Cloudflare",
-    "SSL",
-    "SSH",
-    "Figma",
     "Postman",
+    "Figma",
+    "ClickUp",
+    "Agile Development",
   ],
 };
 
 const experiences = [
   {
-    role: "Fullstack Web Developer",
+    role: "Full-Stack Web Developer — University–Industry Graduation Project",
     company: "PT. NEXT GENERATION SOLUTIONS",
     location: "South Tangerang",
     date: "Sep 2025 – Present",
     achievements: [
-      "Developed an integrated ERP system using Laravel, Filament, and MySQL, covering 8+ business modules (attendance, inventory, finance, CRM, HR, marketing, procurement, sales).",
-      "Reduced manual data processing and minimized data duplication across departments through centralized system architecture.",
-      "Led end-to-end development, from requirements analysis to system design and CI/CD deployment.",
-      "Designed and implemented RESTful APIs and role-based access control (RBAC), improving data accessibility, system security, and internal decision-making speed.",
+      "Developing a multi-module ERP platform using Laravel, Filament, MySQL, Tailwind CSS, Filament Shield, and Spatie Permission to support internal company operations.",
+      "Contributing to the development of 8+ integrated business modules, including HR, Attendance, CRM, Sales, Procurement, Inventory, Finance, Marketing, and Project Management.",
+      "Participating in end-to-end development activities including requirements gathering, business workflow analysis, ERD design, backend and frontend implementation, and CI/CD deployment.",
+      "Implementing role-based access control (RBAC), authentication flows, and permission management for multi-role system access.",
+      "Building and maintaining RESTful APIs and internal workflows to support cross-departmental operational processes.",
     ],
   },
   {
-    role: "Frontend Web Developer",
+    role: "Front-End Web Developer Intern",
     company: "PT. RHP CIPTA DIGITAL",
-    location: "Remote, Jakarta",
+    location: "Remote — Jakarta",
     date: "Aug 2025 – Jan 2026",
     achievements: [
-      "Delivered 12+ production-ready WordPress websites from Figma designs using Kadence and Divi, ensuring responsive and pixel-accurate UI implementation.",
-      "Achieved 85–95+ Google PageSpeed scores by optimizing assets, implementing caching strategies, and improving frontend performance.",
-      "Extended WordPress functionality using ACF and custom post types, enabling scalable and maintainable content structures.",
-      "Collaborated with designers and stakeholders to translate business requirements into functional and SEO-optimized web solutions.",
+      "Delivered 12+ production-ready WordPress websites from Figma designs using Kadence and Divi themes, achieving pixel-accurate and responsive implementations.",
+      "Achieved Google PageSpeed scores of 85–95+ through front-end optimization techniques including lazy loading, caching strategies, and asset compression.",
+      "Extended WordPress functionality using Advanced Custom Fields (ACF), custom post types, and reusable component structures.",
+      "Collaborated with designers and stakeholders to translate business requirements into functional, SEO-optimized web solutions.",
     ],
   },
   {
-    role: "Fullstack Web Developer Intern",
+    role: "Full-Stack Web Developer Intern",
     company: "PT. TOFFEE INTERNATIONAL",
     location: "West Jakarta",
     date: "Feb 2025 – May 2025",
     achievements: [
-      "Developed an internal project management system using Laravel and Filament, improving cross-team visibility and coordination.",
-      "Implemented task management, KPI tracking, and role-based access control (RBAC) to support structured workflows.",
-      "Contributed to system architecture and database design (ERD), ensuring scalability and maintainability.",
-      "Debugged and enhanced existing features, improving system stability and reducing manual reporting processes.",
+      "Developed an internal project management system using Laravel and Filament to improve project visibility and team collaboration.",
+      "Implemented task management, KPI tracking, and RBAC features to support structured operational workflows.",
+      "Assisted with database design (ERD) and contributed to system architecture discussions for scalable application development.",
+      "Enhanced existing system features, resolved bugs, and improved overall application stability and maintainability.",
     ],
   },
   {
-    role: "Fullstack Web Developer Intern",
+    role: "Full-Stack Web Developer Intern",
     company: "PT. SEPULUH SEBELAS MEDIA",
     location: "North Jakarta",
     date: "Jul 2024 – Jan 2025",
     achievements: [
       "Built a career portal with an automated psychotest system using CodeIgniter and REST APIs, reducing manual candidate screening time.",
-      "Implemented automated email workflows, enabling real-time candidate onboarding and improving recruitment efficiency.",
-      "Designed API-based data flow for handling candidate data and test results, ensuring seamless system integration.",
+      "Implemented automated email workflows to enable real-time candidate onboarding and improve recruitment efficiency.",
+      "Designed API-based data flows for handling candidate records and test results, ensuring seamless system integration.",
     ],
   },
 ];
@@ -98,7 +102,7 @@ export default function AboutPage() {
       name: "Ari Sandika",
       jobTitle: "Fullstack Web Developer",
       email: "arisndk36@gmail.com",
-      telephone: "",
+      telephone: "+6288210508008",
       address: {
         "@type": "PostalAddress",
         addressLocality: "Tangerang",
@@ -109,6 +113,7 @@ export default function AboutPage() {
       sameAs: [
         "https://github.com/arisandika",
         "https://linkedin.com/in/ari-sandika",
+        "https://arisandika.vercel.app",
       ],
       alumniOf: {
         "@type": "CollegeOrUniversity",
@@ -141,7 +146,8 @@ export default function AboutPage() {
               <div className="flex flex-col gap-1 shrink-0 md:w-1/3">
                 <p className="text-sm text-yellow-300">Ari Sandika</p>
                 <p className="text-sm text-white/50">Tangerang, Banten, ID</p>
-                <div className="flex gap-4 mt-3 text-sm text-white/70">
+                <p className="text-sm text-white/50">+62 882-1050-8008</p>
+                <div className="flex gap-4 mt-3 text-sm text-white/70 flex-wrap">
                   <TransitionLink
                     href="mailto:arisndk36@gmail.com"
                     target="_blank"
@@ -187,7 +193,27 @@ export default function AboutPage() {
                     target="_blank"
                     className={`inline-flex items-center gap-1 text-sm transition-colors duration-300 border-b border-dotted w-fit text-white/80 hover:text-yellow-300 border-white/20 hover:border-yellow-300/50 group`}
                   >
-                    <span>Github</span>
+                    <span>GitHub</span>
+                    <svg
+                      className="w-3 h-3 text-yellow-300 flex-shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M7 17L17 7M17 7H7M17 7V17"
+                      />
+                    </svg>
+                  </TransitionLink>
+                  <TransitionLink
+                    href="https://arisandika.vercel.app"
+                    target="_blank"
+                    className={`inline-flex items-center gap-1 text-sm transition-colors duration-300 border-b border-dotted w-fit text-white/80 hover:text-yellow-300 border-white/20 hover:border-yellow-300/50 group`}
+                  >
+                    <span>Portfolio</span>
                     <svg
                       className="w-3 h-3 text-yellow-300 flex-shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                       fill="none"
@@ -209,8 +235,8 @@ export default function AboutPage() {
                 <p>
                   Fullstack Web Developer with hands-on experience in ERP and
                   internal business systems, and solid experience in building
-                  scalable multi-module platforms using Laravel and modern
-                  JavaScript frameworks.
+                  scalable multi-module platforms using Laravel, WordPress,
+                  React, and Next.js.
                 </p>
                 <p className="mt-4">
                   Strong in database design, system architecture, and API
@@ -229,7 +255,7 @@ export default function AboutPage() {
         <section className="flex flex-col gap-8">
           <div className="flex items-center gap-4">
             <h2 className="text-sm tracking-widest text-white/40 uppercase">
-              Technical Skill
+              Key Skills
             </h2>
             <div className="flex-1 h-px border-b border-[#f2f2f21a] border-dotted"></div>
           </div>
@@ -317,10 +343,10 @@ export default function AboutPage() {
             <article className="flex flex-col gap-1">
               <h3 className="text-sm text-white">Universitas Pamulang</h3>
               <p className="text-sm text-white/60">
-                Bachelor of Computer Science, Informatics Engineering
+                Bachelor of Computer Science — Informatics Engineering
               </p>
               <time className="text-sm text-yellow-300/80 mt-2">
-                2022 – Expected 2026
+                2022 – Present
               </time>
               <p className="text-sm text-white/40">South Tangerang</p>
             </article>
@@ -336,10 +362,10 @@ export default function AboutPage() {
             <ul className="flex flex-col gap-4">
               <li className="flex flex-col gap-1">
                 <h3 className="text-sm text-white">
-                  BNSP Certified Web Developer
+                  Certified Web Developer Scheme
                 </h3>
                 <span className="text-sm text-yellow-300/80">
-                  Indonesia, 2026
+                  BNSP, 2026
                 </span>
               </li>
               <li className="flex flex-col gap-1">
@@ -350,7 +376,7 @@ export default function AboutPage() {
               </li>
               <li className="flex flex-col gap-1">
                 <h3 className="text-sm text-white">
-                  Frontend Developer Virtual Internship
+                  Front-End Developer Virtual Internship
                 </h3>
                 <span className="text-sm text-yellow-300/80">
                   Rakamin Academy, 2023

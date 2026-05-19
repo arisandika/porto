@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Button from "../ui/button";
+import { siteConfig } from "@/app/config/site";
 
 function ScrollIndicator() {
   return (
@@ -17,6 +19,10 @@ function ScrollIndicator() {
 }
 
 export default function Hero() {
+  const resumeLink =
+      siteConfig.navLinks.find((link) => link.label === "Resume")?.href ||
+      "/resume";
+
   return (
     // HTML dan Style TETAP SAMA PERSIS dengan kode Anda
     <section className="relative flex flex-col justify-center pt-36 md:pt-32 pb-44 md:pb-24">
@@ -58,12 +64,16 @@ export default function Hero() {
                       end-to-end digital{" "}
                       <span className="text-hero-serif">experiences.</span>
                     </h2>
-                    <div className="grid md:grid-cols-2">
-                      <div />
+                    <div className="grid md:grid-cols-2 gap-6">
                       <h1 className="text-hero-about">
                         I&apos;m Ari Sandika a fullstack web developer with a
                         focus on building software for real business operations.
                       </h1>
+                      <div className="w-full flex md:justify-center">
+                        <Button href={resumeLink} active showExternalIcon>
+                          Download Resume
+                        </Button>
+                      </div>
                     </div>
                   </div>
                   <div className="window-grain" />

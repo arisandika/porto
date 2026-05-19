@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import { Geist_Mono, Gloock } from "next/font/google";
 import "./globals.css";
@@ -10,6 +10,7 @@ const GeistMono = Geist_Mono({
   variable: "--font-geist-mono",
   weight: ["400", "500"],
   subsets: ["latin"],
+  display: "swap",
 });
 
 const NeueHaas = localFont({
@@ -61,14 +62,40 @@ const gloock = Gloock({
   variable: "--font-gloock",
   weight: ["400"],
   subsets: ["latin"],
+  display: "swap",
 });
 
+// SEO: Viewport export (Next.js 14+ best practice)
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#0e0e0e",
+};
+
 export const metadata: Metadata = {
+  // SEO CRITICAL: metadataBase resolves all relative OG/canonical URLs
+  metadataBase: new URL(siteConfig.url),
   title: {
     default: `${siteConfig.name} – ${siteConfig.role}`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
+  // SEO: Canonical URL for the root
+  alternates: {
+    canonical: "/",
+  },
+  // SEO: Indexing directives
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   // SEO OPTIMIZATION: Open Graph & Twitter
   openGraph: {
     title: `${siteConfig.name} – ${siteConfig.role}`,
@@ -77,12 +104,35 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 1200,
+        height: 630,
+        alt: `${siteConfig.name} – ${siteConfig.role} Portfolio`,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: `${siteConfig.name} – ${siteConfig.role}`,
     description: siteConfig.description,
+    images: [siteConfig.ogImage],
   },
+  // SEO: Additional metadata
+  keywords: [
+    "Ari Sandika",
+    "Fullstack Web Developer",
+    "Laravel Developer",
+    "Next.js Developer",
+    "React Developer",
+    "WordPress Developer",
+    "Portfolio",
+    "Web Developer Indonesia",
+    "ERP Developer",
+  ],
+  authors: [{ name: siteConfig.name, url: siteConfig.url }],
+  creator: siteConfig.name,
 };
 
 export default function RootLayout({
@@ -95,10 +145,31 @@ export default function RootLayout({
     name: siteConfig.name,
     jobTitle: siteConfig.role,
     url: siteConfig.url,
+    email: siteConfig.email,
+    image: `${siteConfig.url}/assets/images/ari.webp`,
     sameAs: [
       siteConfig.socialLinks.find((link) => link.label === "Linkedin")?.href,
       siteConfig.socialLinks.find((link) => link.label === "Github")?.href,
     ].filter(Boolean),
+    knowsAbout: [
+      "Laravel",
+      "Next.js",
+      "React",
+      "WordPress",
+      "TypeScript",
+      "PHP",
+      "REST API",
+      "ERP Systems",
+    ],
+  };
+
+  // SEO: WebSite schema for sitelinks search box
+  const websiteJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: siteConfig.name,
+    url: siteConfig.url,
+    description: siteConfig.description,
   };
 
   return (
@@ -107,6 +178,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
       </head>
       <body

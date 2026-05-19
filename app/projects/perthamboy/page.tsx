@@ -1,6 +1,19 @@
+import type { Metadata } from "next";
 import ProjectLayout from "@/components/layouts/project-layout";
 import Media from "@/components/ui/media";
 
+export const metadata: Metadata = {
+  title: "Visit Perth Amboy Tourism Website",
+  description:
+    "A tourism and destination platform for Visit Perth Amboy, showcasing historic waterfront, local businesses, events, and travel planning resources.",
+  alternates: { canonical: "/projects/perthamboy" },
+  openGraph: {
+    title: "Visit Perth Amboy Tourism Website | Ari Sandika",
+    description:
+      "Tourism destination website built with WordPress featuring attractions, dining, events, and visitor guides.",
+    images: ["/assets/projects/perthamboy/card.webp"],
+  },
+};
 const ProjectPerthAmboy = () => {
   return (
     <ProjectLayout

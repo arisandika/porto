@@ -1,5 +1,19 @@
+import type { Metadata } from "next";
 import ProjectLayout from "@/components/layouts/project-layout";
 import Media from "@/components/ui/media";
+
+export const metadata: Metadata = {
+  title: "Toondangan – Digital Wedding Invitation Service",
+  description:
+    "A landing page for Toondangan, a digital wedding invitation service with custom illustrations, animated storytelling, RSVP, and interactive web experiences.",
+  alternates: { canonical: "/projects/toondangan" },
+  openGraph: {
+    title: "Toondangan Landing Page | Ari Sandika",
+    description:
+      "Modern landing page for animated digital wedding invitation service built with Next.js and Framer Motion.",
+    images: ["/assets/projects/toondangan/card.webp"],
+  },
+};
 
 const ProjectToondangan = () => {
   return (

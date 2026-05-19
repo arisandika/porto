@@ -1,5 +1,19 @@
+import type { Metadata } from "next";
 import ProjectLayout from "@/components/layouts/project-layout";
 import Media from "@/components/ui/media";
+
+export const metadata: Metadata = {
+  title: "Dimensional Search Franchise Website",
+  description:
+    "A corporate website for Dimensional Search, an executive recruitment franchise network with multi-page architecture and marketing-focused content.",
+  alternates: { canonical: "/projects/dimentional" },
+  openGraph: {
+    title: "Dimensional Search Franchise Website | Ari Sandika",
+    description:
+      "Corporate franchise website for executive recruitment network built with WordPress and Avada Builder.",
+    images: ["/assets/projects/dimensional/card.webp"],
+  },
+};
 
 const ProjectDimentional = () => {
   return (

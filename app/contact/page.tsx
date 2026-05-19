@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Contact",
   description:
     "Get in touch with Ari Sandika. Let's build something great together. Available for freelance projects and full-time opportunities.",
+  alternates: {
+    canonical: "/contact",
+  },
 };
 
 export default function ContactPage() {

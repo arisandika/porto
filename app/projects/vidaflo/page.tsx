@@ -1,5 +1,19 @@
+import type { Metadata } from "next";
 import ProjectLayout from "@/components/layouts/project-layout";
 import Media from "@/components/ui/media";
+
+export const metadata: Metadata = {
+  title: "Vida-Flo IV Hydration Multi-Location Website",
+  description:
+    "A multi-location healthcare marketing platform for Vida-Flo, featuring IV hydration therapy, wellness treatments, and membership programs across the United States.",
+  alternates: { canonical: "/projects/vidaflo" },
+  openGraph: {
+    title: "Vida-Flo IV Hydration Website | Ari Sandika",
+    description:
+      "Multi-location healthcare wellness clinic website built with WordPress and scalable location-based architecture.",
+    images: ["/assets/projects/vidaflo/card.webp"],
+  },
+};
 
 const ProjectVidaflo = () => {
   return (

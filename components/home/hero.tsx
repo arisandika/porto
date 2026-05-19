@@ -59,16 +59,16 @@ export default function Hero() {
                 <div className="window-content">
                   <div className="glare-inner" />
                   <div className="flex flex-col gap-8 md:gap-14">
-                    <h2 className="text-hero-title">
+                    <h1 className="text-hero-title">
                       I build scalable products, seamless interactions &
                       end-to-end digital{" "}
                       <span className="text-hero-serif">experiences.</span>
-                    </h2>
+                    </h1>
                     <div className="grid md:grid-cols-2 gap-6">
-                      <h1 className="text-hero-about">
-                        I&apos;m Ari Sandika a fullstack web developer with a
+                      <p className="text-hero-about">
+                        I&apos;m Ari Sandika, a fullstack web developer with a
                         focus on building software for real business operations.
-                      </h1>
+                      </p>
                       <div className="w-full flex md:justify-center">
                         <Button href={resumeLink} active showExternalIcon>
                           Download Resume

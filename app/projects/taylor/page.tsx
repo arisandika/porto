@@ -1,5 +1,19 @@
+import type { Metadata } from "next";
 import ProjectLayout from "@/components/layouts/project-layout";
 import Media from "@/components/ui/media";
+
+export const metadata: Metadata = {
+  title: "Taylor & Travis Animated Wedding Invitation",
+  description:
+    "A digital wedding invitation concept with cartoon-based storytelling, animated characters, scroll-based motion effects, RSVP integration, and a digital guestbook.",
+  alternates: { canonical: "/projects/taylor" },
+  openGraph: {
+    title: "Taylor & Travis Wedding Invitation | Ari Sandika",
+    description:
+      "Animated digital wedding invitation built with Next.js, Tailwind CSS, and Framer Motion.",
+    images: ["/assets/projects/taylor/card.mp4"],
+  },
+};
 
 const ProjectTaylor = () => {
   return (

@@ -1,5 +1,19 @@
+import type { Metadata } from "next";
 import ProjectLayout from "@/components/layouts/project-layout";
 import Media from "@/components/ui/media";
+
+export const metadata: Metadata = {
+  title: "THP Roofing of Knoxville – Local Business Website",
+  description:
+    "A corporate website for THP Roofing of Knoxville, a residential and commercial roofing company with service area pages and lead generation flows.",
+  alternates: { canonical: "/projects/thp-roofing" },
+  openGraph: {
+    title: "THP Roofing of Knoxville | Ari Sandika",
+    description:
+      "Local business roofing website built with WordPress, Kadence Builder, and ACF.",
+    images: ["/assets/projects/thproofing/card.webp"],
+  },
+};
 
 const ProjectTHPRoofing = () => {
   return (

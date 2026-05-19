@@ -1,5 +1,19 @@
+import type { Metadata } from "next";
 import ProjectLayout from "@/components/layouts/project-layout";
 import Media from "@/components/ui/media";
+
+export const metadata: Metadata = {
+  title: "12 Days of Christmas Giveaway Campaign Website",
+  description:
+    "An event campaign website for Upper Cumberland Tourism promoting the 12 Days of Christmas Giveaway with prize showcases and registration system.",
+  alternates: { canonical: "/projects/smalltowntnchristmas" },
+  openGraph: {
+    title: "12 Days of Christmas Giveaway | Ari Sandika",
+    description:
+      "Holiday event campaign website built with WordPress, Kadence Builder, and WP Event Calendar.",
+    images: ["/assets/projects/smalltowntnchristmas/card.webp"],
+  },
+};
 
 const ProjectSmalltown = () => {
   return (

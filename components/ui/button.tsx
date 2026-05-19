@@ -26,7 +26,7 @@ const Button = ({
 }: ButtonProps) => {
   // 3. Tambahkan "bg-white/5" secara permanen jika active bernilai true
   // (Saya juga menghapus duplikasi class "group" yang ada di kode sebelumnya)
-  const baseClasses = `group relative inline-flex items-center justify-center gap-2 rounded-full px-4 py-3 text-sm font-medium text-white overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:bg-white/5 cursor-pointer ${
+  const baseClasses = `h-fit group relative inline-flex items-center justify-center gap-2 rounded-full px-4 py-3 text-sm font-medium text-white overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:bg-white/5 cursor-pointer ${
     active ? "bg-white/5" : ""
   } ${className}`;
 

@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "About",
   description:
     "Learn more about Ari Sandika, a Fullstack Web Developer with expertise in Laravel, WordPress, React, Next.js, and scalable business systems.",
+  alternates: {
+    canonical: "/about",
+  },
 };
 
 const skills = {

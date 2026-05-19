@@ -54,6 +54,25 @@ export default function ProjectList({ projects }: ProjectListProps) {
           </div>
         </div>
       )}
+
+      {/* SEO: Noscript fallback — ensures Googlebot can discover ALL project links
+          even when JS-based "Load More" hasn't been triggered */}
+      <noscript>
+        <nav aria-label="All projects" className="mt-8">
+          <ul className="flex flex-col gap-2 text-sm text-white/70">
+            {projects.slice(visibleCount).map((project) => (
+              <li key={project.id}>
+                <a
+                  href={project.href}
+                  className="underline"
+                >
+                  {project.title} — {project.category} ({project.year})
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </noscript>
     </div>
   );
 }

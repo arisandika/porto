@@ -1,6 +1,14 @@
+import type { Metadata } from "next";
 import Hero from "@/components/home/hero";
 import ProjectsSection from "@/components/home/projects-section";
 import { projectsData } from "./data/projects";
+import { siteConfig } from "./config/site";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "/",
+  },
+};
 
 export default function Home() {
   // SEO OPTIMIZATION: JSON-LD Structured Data
@@ -17,7 +25,7 @@ export default function Home() {
         dateCreated: project.year,
         url: project.href.startsWith("http")
           ? project.href
-          : `https://arisandika.vercel.app${project.href}`,
+          : `${siteConfig.url}${project.href}`,
       },
     })),
   };

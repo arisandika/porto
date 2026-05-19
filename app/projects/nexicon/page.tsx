@@ -1,5 +1,19 @@
+import type { Metadata } from "next";
 import ProjectLayout from "@/components/layouts/project-layout";
 import Media from "@/components/ui/media";
+
+export const metadata: Metadata = {
+  title: "Nexicon – ERP Business Platform",
+  description:
+    "A multi-module ERP platform built with Laravel, Filament, and Livewire for internal company operations including HR, CRM, Sales, and Project Management.",
+  alternates: { canonical: "/projects/nexicon" },
+  openGraph: {
+    title: "Nexicon ERP Platform | Ari Sandika",
+    description:
+      "Multi-module ERP system built with Laravel 12, Filament, Spatie Permission, and Livewire.",
+    images: ["/assets/projects/nexicon/thumbnail.webp"],
+  },
+};
 
 const ProjectNexicon = () => {
   return (

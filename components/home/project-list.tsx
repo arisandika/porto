@@ -20,7 +20,7 @@ export default function ProjectList({ projects }: ProjectListProps) {
       setIsLoading(false);
       // Tambahkan 4 dari jumlah yang sedang tampil saat ini
       setVisibleCount((prevCount) => prevCount + 4);
-    }, 1200);
+    }, 300);
   };
 
   const hasMore = visibleCount < projects.length;
@@ -48,7 +48,7 @@ export default function ProjectList({ projects }: ProjectListProps) {
               </div>
             ) : (
               <Button onClick={handleLoadMore} active={true}>
-                View More Projects
+                View More
               </Button>
             )}
           </div>

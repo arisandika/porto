@@ -17,45 +17,83 @@ const skills = {
     "Laravel",
     "CodeIgniter",
     "WordPress",
-    "React.js",
     "Next.js",
+    "React.js",
     "Express.js",
-    "jQuery",
     "Tailwind CSS",
+    "jQuery",
   ],
-  Backend: ["REST API Development", "Authentication & Authorization", "RBAC", "MVC Architecture"],
-  "Database & Infrastructure": [
-    "MySQL",
+  "Backend & Architecture": [
+    "REST APIs",
+    "MVC",
+    "Service Layer Architecture",
+    "RBAC",
+    "Session Management",
+    "Caching Management",
+    "Payment Gateway Integration",
+  ],
+  Database: [
     "PostgreSQL",
-    "Redis",
+    "MySQL",
+    "Database Transactions",
+    "Row-Level Locking",
+    "Query Optimization",
     "ERD Design",
-    "VPS Management",
+  ],
+  Security: [
+    "HMAC-SHA256",
+    "Webhook Security",
+    "CSRF Protection",
+    "XSS/SQL Injection Prevention",
+    "API Security",
+  ],
+  "Infrastructure & DevOps": [
+    "VPS",
+    "Ubuntu",
+    "Apache",
     "Cloudflare",
     "SSL/SSH",
+    "CI/CD",
+    "Cron Jobs",
   ],
   "Tools & Workflow": [
     "Git",
-    "GitHub Actions",
-    "CI/CD",
+    "GitHub",
+    "GitLab",
     "Postman",
     "Figma",
-    "ClickUp",
+    "Adobe XD",
     "Agile Development",
   ],
 };
 
 const experiences = [
   {
+    role: "Full-Stack Web Developer",
+    company: "PT. LYRID PRIMA INDONESIA",
+    location: "North Jakarta",
+    date: "Jun 2026 – Present",
+    achievements: [
+      "Architected and developed a modular backend platform using PHP and PostgreSQL, with custom routing, dynamic parameters, RESTful APIs, authentication, and database services.",
+      "Integrated a third-party payment gateway with HMAC-SHA256 webhook verification, IP whitelisting, and idempotent callbacks to secure transaction processing and data integrity.",
+      "Developed user authentication and access management covering registration, multi-step email verification, password recovery, OAuth 2.0 single sign-on, database-backed sessions, CSRF protection, and role-based access control.",
+      "Built core wallet transaction logic with dynamic value conversion, fee calculation, transaction limits, and automated cleanup of stale records to maintain financial and database consistency.",
+      "Developed item distribution services with multi-condition business rules and session-scoped state management to ensure consistent transaction outcomes.",
+      "Implemented high-concurrency PostgreSQL transactions with PgBouncer connection pooling, row-level locking, batch processing, and deadlock prevention to maintain data integrity and query performance.",
+      "Designed relational database schemas for user assets, ownership states, and transaction history with optimized queries for reliable and low-latency data access.",
+      "Built scheduled reconciliation jobs for transaction monitoring and recovery to improve reliability and consistency for pending financial transactions.",
+    ],
+  },
+  {
     role: "Full-Stack Web Developer — University–Industry Graduation Project",
     company: "PT. NEXT GENERATION SOLUTIONS",
     location: "South Tangerang",
-    date: "Sep 2025 – Present",
+    date: "Sep 2025 – Apr 2026",
     achievements: [
-      "Developing a multi-module ERP platform using Laravel, Filament, MySQL, Tailwind CSS, Filament Shield, and Spatie Permission to support internal company operations.",
-      "Contributing to the development of 8+ integrated business modules, including HR, Attendance, CRM, Sales, Procurement, Inventory, Finance, Marketing, and Project Management.",
-      "Participating in end-to-end development activities including requirements gathering, business workflow analysis, ERD design, backend and frontend implementation, and CI/CD deployment.",
-      "Implementing role-based access control (RBAC), authentication flows, and permission management for multi-role system access.",
-      "Building and maintaining RESTful APIs and internal workflows to support cross-departmental operational processes.",
+      "Developed a multi-module ERP platform using Laravel, Filament, MySQL, and Tailwind CSS, covering 8+ business modules including HR, Attendance, CRM, Sales, Procurement, Inventory, Finance, Marketing, and Project Management.",
+      "Handled end-to-end application development from requirements gathering and business workflow analysis to ERD design, backend/frontend implementation, and CI/CD deployment.",
+      "Implemented role-based access control and authentication using Filament Shield and Spatie Permission to manage multi-role system access.",
+      "Developed and maintained RESTful APIs to integrate business workflows and data across multiple ERP modules.",
     ],
   },
   {
@@ -64,10 +102,9 @@ const experiences = [
     location: "Remote — Jakarta",
     date: "Aug 2025 – Jan 2026",
     achievements: [
-      "Delivered 12+ production-ready WordPress websites from Figma designs using Kadence and Divi themes, achieving pixel-accurate and responsive implementations.",
-      "Achieved Google PageSpeed scores of 85–95+ through front-end optimization techniques including lazy loading, caching strategies, and asset compression.",
+      "Developed 12+ production-ready WordPress websites from Figma designs using Kadence and Divi with responsive, pixel-accurate interfaces.",
+      "Optimized frontend performance to achieve Google PageSpeed scores of 85–95+ through lazy loading, caching, and asset compression.",
       "Extended WordPress functionality using Advanced Custom Fields (ACF), custom post types, and reusable component structures.",
-      "Collaborated with designers and stakeholders to translate business requirements into functional, SEO-optimized web solutions.",
     ],
   },
   {
@@ -77,9 +114,9 @@ const experiences = [
     date: "Feb 2025 – May 2025",
     achievements: [
       "Developed an internal project management system using Laravel and Filament to improve project visibility and team collaboration.",
-      "Implemented task management, KPI tracking, and RBAC features to support structured operational workflows.",
-      "Assisted with database design (ERD) and contributed to system architecture discussions for scalable application development.",
-      "Enhanced existing system features, resolved bugs, and improved overall application stability and maintainability.",
+      "Implemented task management, KPI tracking, and role-based access control to support structured operational workflows.",
+      "Designed relational database structures and ERDs and contributed to application architecture decisions.",
+      "Resolved application issues and improved existing features to enhance system stability and maintainability.",
     ],
   },
   {
@@ -88,9 +125,9 @@ const experiences = [
     location: "North Jakarta",
     date: "Jul 2024 – Jan 2025",
     achievements: [
-      "Built a career portal with an automated psychotest system using CodeIgniter and REST APIs, reducing manual candidate screening time.",
-      "Implemented automated email workflows to enable real-time candidate onboarding and improve recruitment efficiency.",
-      "Designed API-based data flows for handling candidate records and test results, ensuring seamless system integration.",
+      "Developed a career portal with automated psychometric testing using CodeIgniter and REST APIs to streamline candidate screening workflows.",
+      "Designed API-based data flows for candidate records and test results to support cross-system integration.",
+      "Implemented automated email workflows to streamline candidate onboarding and deliver timely recruitment notifications.",
     ],
   },
 ];
@@ -211,42 +248,15 @@ export default function AboutPage() {
                       />
                     </svg>
                   </TransitionLink>
-                  <TransitionLink
-                    href="https://arisandika.vercel.app"
-                    target="_blank"
-                    className={`inline-flex items-center gap-1 text-sm transition-colors duration-300 border-b border-dotted w-fit text-white/80 hover:text-yellow-300 border-white/20 hover:border-yellow-300/50 group`}
-                  >
-                    <span>Portfolio</span>
-                    <svg
-                      className="w-3 h-3 text-yellow-300 flex-shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M7 17L17 7M17 7H7M17 7V17"
-                      />
-                    </svg>
-                  </TransitionLink>
                 </div>
               </div>
 
               <div className="text-sm leading-relaxed text-white/80">
                 <p>
-                  Fullstack Web Developer with hands-on experience in ERP and
-                  internal business systems, and solid experience in building
-                  scalable multi-module platforms using Laravel, WordPress,
-                  React, and Next.js.
-                </p>
-                <p className="mt-4">
-                  Strong in database design, system architecture, and API
-                  development, with a track record of reducing manual workflows
-                  and improving operational efficiency. Experienced in
-                  delivering end-to-end solutions from requirement analysis to
-                  deployment in production environments.
+                  Full-Stack Web Developer with 2+ years of hands-on experience building and delivering production
+                  web applications across business, commerce, recruitment, ERP, and internal operations. I specialize
+                  in PHP, JavaScript, and TypeScript, with strong experience across Laravel, React, Next.js,
+                  WordPress, PostgreSQL, and MySQL.
                 </p>
               </div>
             </div>
@@ -349,7 +359,7 @@ export default function AboutPage() {
                 Bachelor of Computer Science — Informatics Engineering
               </p>
               <time className="text-sm text-yellow-300/80 mt-2">
-                2022 – Present
+                Aug 2022 – Aug 2026
               </time>
               <p className="text-sm text-white/40">South Tangerang</p>
             </article>
@@ -375,6 +385,12 @@ export default function AboutPage() {
                 <h3 className="text-sm text-white">Junior Web Developer</h3>
                 <span className="text-sm text-yellow-300/80">
                   Digital Talent Scholarship, Kominfo, 2023
+                </span>
+              </li>
+              <li className="flex flex-col gap-1">
+                <h3 className="text-sm text-white">Junior Web Developer</h3>
+                <span className="text-sm text-yellow-300/80">
+                  BNSP, 2023
                 </span>
               </li>
               <li className="flex flex-col gap-1">

@@ -1,8 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import ProjectCard from "./project-card";
-import Button from "@/components/ui/button";
 import { Project } from "@/app/data/projects";
 
 interface ProjectListProps {
@@ -12,18 +11,38 @@ interface ProjectListProps {
 export default function ProjectList({ projects }: ProjectListProps) {
   const [visibleCount, setVisibleCount] = useState(4); // Mulai dari 4
   const [isLoading, setIsLoading] = useState(false);
-
-  const handleLoadMore = () => {
-    setIsLoading(true);
-    // Simulasi loading selama 1.2 detik untuk memunculkan efek titik-titik
-    setTimeout(() => {
-      setIsLoading(false);
-      // Tambahkan 4 dari jumlah yang sedang tampil saat ini
-      setVisibleCount((prevCount) => prevCount + 4);
-    }, 300);
-  };
+  const observerRef = useRef<HTMLDivElement>(null);
 
   const hasMore = visibleCount < projects.length;
+
+  useEffect(() => {
+    if (!hasMore || isLoading) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setIsLoading(true);
+          // Simulasi loading selama 1.2 detik untuk memunculkan efek titik-titik (300ms)
+          setTimeout(() => {
+            setVisibleCount((prevCount) => prevCount + 4);
+            setIsLoading(false);
+          }, 800);
+        }
+      },
+      { rootMargin: "100px" }
+    );
+
+    const currentTarget = observerRef.current;
+    if (currentTarget) {
+      observer.observe(currentTarget);
+    }
+
+    return () => {
+      if (currentTarget) {
+        observer.unobserve(currentTarget);
+      }
+    };
+  }, [hasMore, isLoading]);
 
   return (
     <div className="relative flex flex-col w-full">
@@ -34,23 +53,15 @@ export default function ProjectList({ projects }: ProjectListProps) {
       </div>
 
       {hasMore && (
-        <div className="mt-16">
-          <div className="flex justify-center w-full pointer-events-auto">
-            {isLoading ? (
-              <div className="flex items-center justify-center h-[44px] gap-2">
-                {[0, 1, 2, 3, 4].map((i) => (
-                  <div
-                    key={i}
-                    className="w-1.5 h-1.5 bg-white/80 rounded-full loading-dot"
-                    style={{ animationDelay: `${i * 150}ms` }}
-                  />
-                ))}
-              </div>
-            ) : (
-              <Button onClick={handleLoadMore} active={true}>
-                View More
-              </Button>
-            )}
+        <div ref={observerRef} className="mt-16 flex justify-center w-full pointer-events-auto">
+          <div className="flex items-center justify-center h-[44px] gap-2">
+            {[0, 1, 2, 3, 4].map((i) => (
+              <div
+                key={i}
+                className="w-1.5 h-1.5 bg-white/80 rounded-full loading-dot"
+                style={{ animationDelay: `${i * 150}ms` }}
+              />
+            ))}
           </div>
         </div>
       )}

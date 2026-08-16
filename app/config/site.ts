@@ -10,7 +10,7 @@ export const siteConfig = {
     { href: "/", label: "Home", number: 1 },
     { href: "/about", label: "About", number: 2 },
     { href: "/contact", label: "Contact", number: 3 },
-    { href: "https://drive.google.com/file/d/1EseYGtdVj36b60i4VoSP2CqEcmlFlPqy/view?usp=sharing", label: "Resume", number: 4, external: true },
+    { href: "https://drive.google.com/file/d/1ET04NoZPPaZ70xATyFiw7asiwrvxi8Y8/view?usp=sharing", label: "Resume", number: 4, external: true },
   ],
   featuredProjects: [
     { href: "https://interaerp.com/", label: "INTERA-ERP", number: 5 },
